@@ -1,0 +1,43 @@
+{
+  "id": "/?source=pwa",
+  "short_name": "CyberGuard",
+  "name": "CyberGuard SOC & Adaptive Firewall",
+  "description": "Autonomous AI Cybersecurity SOC & Adaptive Kernel Firewall Platform for Real-Time Threat Mitigation",
+  "icons": [
+    {
+      "src": "/shield.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48 72x72 96x96 144x144",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0C1014",
+  "theme_color": "#E05A1B",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "categories": ["security", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Attacker & Chat Gateway",
+      "short_name": "Relay Chat",
+      "description": "Open Phone A / Phone B In-Line Messenger Simulator",
+      "url": "/attacker",
+      "icons": [{ "src": "/shield.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Laptop SOC Console",
+      "short_name": "SOC Console",
+      "description": "Open Live Security Operations Center",
+      "url": "/",
+      "icons": [{ "src": "/shield.svg", "sizes": "192x192" }]
+    }
+  ]
+}

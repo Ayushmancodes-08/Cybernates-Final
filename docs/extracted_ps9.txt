@@ -1,0 +1,223 @@
+=== PAGE 1 ===
+Problem Statement: CYBERGUARD - AI Powered Cyber 
+Threat, Phishing & Digital Impersonation Detection and 
+Response System 
+Domain: Cybersecurity + Artificial Intelligence 
+ 
+Background 
+The rapid adoption of digital platforms, online communication, cloud services, social media, 
+digital payments and e -governance systems has significantly increased exposure to 
+sophisticated cyber threats. 
+Attackers are increasingly using Artificial Intelligence and Generative AI  to create highly 
+convincing phishing emails, fake websites, malicious links, cloned voices, deepfake videos, 
+fraudulent identities and personalised social-engineering attacks. 
+At the same time, organisations face threats such as abnormal login attempts, credential 
+theft, account t akeover, malware, suspicious network behaviour, API abuse and data -
+exfiltration attempts. 
+Traditional rule-based security systems are often inadequate to identify such evolving and 
+AI-generated threats. 
+There is therefore a need for an AI-powered intelligent cyber-defence platform capable of 
+detecting technical cyber threats as well as human -targeted phishing, impersonation and 
+deepfake-based attacks. 
+Challenge 
+Design and develop an AI -powered Cyber Threat, Phishing and Digital 
+Impersonation Detection & Res ponse System capable of identifying, analysing, 
+explaining and responding to emerging cyber threats in near real time. 
+The proposed system should use technologies such as Artificial Intelligence, Machine 
+Learning, Natural Language Processing, Computer Visi on, behavioural analytics, anomaly 
+detection or Generative AI to analyse multiple sources of digital activity and identify 
+suspicious or malicious behaviour. 
+The system should not merely generate alerts. It should also provide: 
+• Threat classification 
+• Risk/severity score 
+• Explanation of the detected threat 
+
+=== PAGE 2 ===
+• Evidence or indicators contributing to the decision 
+• Recommended preventive or response actions 
+ 
+ 
+Key Threat Scenarios 
+Teams may address a combination of the following: 
+1. AI-Powered Phishing Detection 
+Detect suspicious: 
+• Emails 
+• SMS/messages 
+• Social-media messages 
+• QR-code-based phishing 
+• Fraudulent websites 
+• Malicious or deceptive URLs 
+The system should identify indicators such as urgency, impersonation, suspicious domains, 
+malicious links, credential requests and unusual communication patterns. 
+2. Deepfake Detection 
+Identify or assess potentially manipulated: 
+• Images 
+• Videos 
+• Voice/audio clips 
+• Video calls 
+• AI-generated multimedia content 
+The system may generate an authenticity/confidence score and highlight indicators of 
+possible manipulation. 
+3. Digital Impersonation Detection 
+Detect attempts to impersonate: 
+• Government officials 
+• Senior management 
+• Teachers or university authorities 
+• Financial institutions 
+• Organisations or brands 
+• Friends, relatives or known contacts 
+
+=== PAGE 3 ===
+The system may analyse identity, communication style, metadata and behavioural patterns. 
+4. Credential Theft & Account Takeover Detection 
+Identify abnormal behaviour such as: 
+• Multiple failed login attempts 
+• Password spraying 
+• Login from unusual locations 
+• New or unknown devices 
+• Suspicious session activity 
+• Sudden changes in account behaviour 
+5. Malicious URL & Website Detection 
+Analyse URLs and websites for indicators including: 
+• Domain spoofing 
+• Look-alike domains 
+• URL manipulation 
+• Malicious redirects 
+• Suspicious SSL/domain characteristics 
+• Fake login pages 
+6. Intelligent Cyber Threat Detection 
+The solution may additionally detect: 
+• Malware indicators 
+• Suspicious network traffic 
+• API abuse 
+• Data-exfiltration behaviour 
+• Abnormal user activities 
+• Insider threats 
+• Unusual system or application logs 
+ 
+ 
+ 
+ 
+Expected Solution 
+The proposed prototype should preferably contain the following modules: 
+
+=== PAGE 4 ===
+A. Multi-Source Threat Analysis Engine 
+The system may analyse: 
+• Emails 
+• SMS/messages 
+• URLs 
+• Images 
+• Audio 
+• Videos 
+• Authentication logs 
+• System logs 
+• Network traffic 
+• API logs 
+B. AI-Based Detection Engine 
+Participants may use: 
+• Machine Learning 
+• Deep Learning 
+• Natural Language Processing 
+• Computer Vision 
+• Speech/Audio Analysis 
+• Large Language Models 
+• Behavioural Analytics 
+• Anomaly Detection 
+• Graph Analytics 
+• Hybrid Rule + AI Models 
+C. Threat Risk Scoring 
+Every suspicious event should be assigned an appropriate risk level, for example: 
+Safe → Low → Medium → High → Critical 
+The system should explain the major factors behind the score. 
+D. Explainable AI 
+Instead of providing only: 
+“Phishing Detected” 
+the system should provide an explanation such as: 
+
+=== PAGE 5 ===
+“High Risk: The sender domain closely resembles an authorised organisation, the 
+message requests urgent credential verification, and the embedded URL redirects 
+to an unrelated domain.” 
+For deepfake detection, the system may similarly explain the indicators influencing its 
+confidence score. 
+E. Intelligent Response Recommendation 
+Depending on the detected threat, the system may recommend: 
+• Block suspicious URL 
+• Quarantine email 
+• Warn the user 
+• Require additional authentication 
+• Revoke active session 
+• Block suspicious IP/device 
+• Flag multimedia for manual verification 
+• Report impersonation 
+• Notify administrator/SOC 
+• Escalate the incident for investigation 
+F. Cybersecurity Command Dashboard 
+Develop an interactive dashboard displaying: 
+• Total events analysed 
+• Threats detected 
+• Threat category 
+• Risk level 
+• Phishing attempts 
+• Impersonation attempts 
+• Suspected deepfakes 
+• Account takeover attempts 
+• Attack timeline 
+• Frequently targeted users/services 
+• Recommended actions 
+• Incident status 
+ 
+Innovation Opportunities 
+Participants are encouraged to explore advanced capabilities such as: 
+
+=== PAGE 6 ===
+• Generative AI-assisted cybersecurity 
+• AI-generated phishing detection 
+• Multimodal deepfake detection 
+• Voice-cloning detection 
+• Email sender authenticity analysis 
+• Digital identity verification 
+• Behaviour-based fraud detection 
+• Explainable AI 
+• Graph-based cyberattack analysis 
+• Real-time threat intelligence 
+• MITRE ATT&CK mapping 
+• Zero-day anomaly detection 
+• Privacy-preserving AI 
+• Federated learning 
+• Autonomous cyber-defence agents 
+• Automated incident-response playbooks 
+Minimum Expected Prototype 
+Each team should demonstrate at least three different cybersecurity scenarios, of which 
+preferably: 
+1. One should involve phishing/social engineering. 
+2. One should involve digital impersonation/deepfake or identity fraud. 
+3. One should involve a technical cybersecurity threat or abnormal behaviour. 
+The prototype should demonstrate: 
+Detection → Classification → Risk Assessment → Explanation → Alert → 
+Recommended Response 
+Minimum Deliverables 
+Teams should submit/demonstrate: 
+1. Working prototype. 
+2. Threat-detection mechanism. 
+3. Detection of at least three cybersecurity scenarios. 
+4. Risk-scoring mechanism. 
+5. Explainable threat assessment. 
+6. Cybersecurity monitoring dashboard. 
+7. Recommended mitigation/response mechanism. 
+
+=== PAGE 7 ===
+8. System architecture. 
+9. Details of models/algorithms used. 
+10. Demonstration using simulated, authorised or publicly available cybersecurity 
+datasets. 
+11. Accuracy/performance evaluation. 
+12. Scalability and deployment approach. 
+ 
+Desired Impact 
+The proposed solution should have the potential to evolve into an intelligent AI Cyber 
+Defence & Digital Trust Platform  that could be deployed f or academic, government, and 
+enterprise bodies. The objective is to create a system capable of protecting both the 
+technology layer and the human layer of cybersecurity. 
+

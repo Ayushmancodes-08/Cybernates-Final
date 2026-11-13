@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "primary-fixed": "#dbe1ff", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "surface": "#f8f9ff", "surface-bright": "#f8f9ff", "secondary-container": "#d7dff9", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "error-container": "#ffdad6", "primary-container": "#2563eb", "inverse-primary": "#b4c5ff", "surface-tint": "#0053db", "inverse-on-surface": "#eaf1ff", "tertiary": "#005d73", "on-secondary-container": "#5a6278", "secondary": "#555e74", "tertiary-container": "#007793", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#001f28", "on-primary-fixed-variant": "#003ea8", "on-primary-fixed": "#00174b", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004e61", "inverse-surface": "#213145", "tertiary-fixed-dim": "#6cd3f7", "outline-variant": "#c3c6d7", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#3e475b", "on-surface-variant": "#434655", "outline": "#737686", "on-secondary-fixed": "#121b2e", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-fixed": "#d9e2fc", "primary": "#004ac6", "on-tertiary-container": "#dcf4ff", "on-error-container": "#93000a", "on-primary-container": "#eeefff", "secondary-fixed-dim": "#bdc6e0", "on-background": "#0b1c30", "background": "#f8f9ff", "tertiary-fixed": "#b7eaff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-lg": "2rem", "margin-sm": "1rem", "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem" }, "fontFamily": { "tech-mono-sm": ["JetBrains Mono"], "card-title": ["Inter"], "section-title-mobile": ["Inter"], "tech-mono-base": ["JetBrains Mono"], "display-title": ["Inter"], "display-title-mobile": ["Inter"], "body-regular": ["Inter"], "section-title": ["Inter"], "meta-badge": ["Inter"], "caption": ["Inter"], "body-semibold": ["Inter"] }, "fontSize": { "tech-mono-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "card-title": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "section-title-mobile": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tech-mono-base": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "display-title": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-title-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-regular": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "section-title": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "meta-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-semibold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-regular text-body-regular text-on-surface antialiased"><aside class="fixed inset-y-0 left-0 z-50 w-64 bg-inverse-surface flex flex-col transition-transform duration-200 ease-in-out -translate-x-full lg:translate-x-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" id="app-sidebar"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-inverse-surface/80 shrink-0"><img alt="CyberGuard Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W0LlZVr67H8U73st9v8uu31MpGifyWtIqGXvkSnVeDV7k9QtYEEICK9jRhPEL4anr5LRlqjJGAsh2I5SVx2XJ11FxdmQBRKNJD3kQbTeJDV40ZS_lRVDlm8XEgvzwmugshSu7o9znWcPkeAY3zqIazxXBRpmKzOos2lfWqZrGIPgLE2REgPuXACB7d8zlJmoJ1HGUfjAM7aY5DrkjRyK4HUYAknTiIn3f9O7YN7iDenc3zst2iMi6bRHM"/><div class="flex flex-col min-w-0"><span class="font-card-title text-card-title text-inverse-on-surface tracking-tight truncate">CyberGuard</span><span class="font-meta-badge text-meta-badge text-outline-variant uppercase tracking-wider truncate">Adaptive Security Platform</span></div><button class="lg:hidden ml-auto p-space-xs text-outline-variant hover:text-inverse-on-surface hover:bg-surface-variant/10 rounded-lg" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-lg space-y-space-xl"><nav class="space-y-space-xl" data-active-classes="bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]"><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Overview</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="overview" href="#">Overview</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Security</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="live-threats" href="#">Live Threats</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="incidents" href="#">Incidents</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="adaptive-firewall" href="#">Adaptive Firewall</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Intelligence</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="network" href="#">Network</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="identity" href="#">Identity</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-colors truncate bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]" data-path="phishing" href="#">Phishing</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="ai-analyst" href="#">AI Analyst</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="threat-intelligence" href="#">Threat Intelligence</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Operations</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="response-center" href="#">Response Center</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="simulator" href="#">Simulator</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">System</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="system-health" href="#">System Health</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="settings" href="#">Settings</a></div></div></nav></div><div class="p-space-md bg-inverse-surface/90 shrink-0"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">ENGINE v4.19</span></div><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">SOC-01</span></div></div></aside><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-40 hidden" id="sidebar-backdrop" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"></div><div class="lg:pl-64 flex flex-col min-h-screen"><header class="fixed top-0 right-0 left-0 lg:left-64 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-1"><button class="lg:hidden p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg" onclick="document.getElementById('app-sidebar').classList.remove('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">menu</span></button><div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-caption text-caption"><a class="hover:text-on-surface text-outline-variant transition-colors" data-path="overview" href="#">CyberGuard</a><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-outline-variant">Intelligence</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-body-semibold text-caption font-semibold">Phishing Analysis</span></div><div class="relative flex-1 max-w-[560px] mx-space-sm"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 bg-surface-container-low text-on-surface placeholder:text-outline text-caption font-body-regular rounded-lg border-0 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search IP, user, device, domain or incident..." type="text"/><kbd class="hidden md:inline-flex absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 bg-surface-container-lowest rounded text-[10px] font-tech-mono-sm text-outline font-semibold shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-outline-variant/30 text-on-surface rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-meta-badge text-meta-badge uppercase tracking-wider font-semibold text-on-surface">NORMAL</span></div><button class="hidden md:inline-flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors border-0"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-caption text-caption font-semibold">All systems operational</span><span class="material-symbols-outlined text-[16px] text-outline">keyboard_arrow_down</span></button><div class="hidden 2xl:inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="font-tech-mono-sm text-tech-mono-sm text-on-surface-variant">Phishing heuristics engine operational</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCT6jP7jRCOx_dsTZ09HouyLkgiW_bDnFeYdm_fUS0qAJyAOeZuYsTrpg-vIYIxAuHlgBDWtEJp7Bn4xtu7nzOfEf09Nwi-ZeWf3XWKdIYMYP9_I--a4ZaNdfXfy6A1Z9QS4XJ8epVRQYhXSiuMkTtQuLDGDuDJuno5_KtNnih4-UCYCMul_5ZwPvzZIU-glZVKQTjUKHih2Fd69scTkVHqtvUgWpE0ipQkOXyaf-gJSBOYKBD0EYUqQ"/><div class="hidden 2xl:flex flex-col text-left"><span class="font-body-semibold text-caption text-on-surface truncate leading-tight">Elena Vance</span><span class="font-meta-badge text-meta-badge text-outline truncate">Lead Security Analyst</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification Center -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-md p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl" id="toast-banner">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]" id="toast-icon">verified</span>
+<span class="font-body-regular text-body-regular" id="toast-message">Adaptive rule synced with kernel eBPF engine</span>
+</div>
+<div class="max-w-[1680px] w-full mx-auto px-space-md lg:px-margin-lg py-space-xl space-y-space-xl">
+<!-- SECTION 1: PAGE HEADER & GLOBAL TELEMETRY -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-display-title text-display-title text-on-surface tracking-tight">Phishing Analysis</h1>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface-variant font-medium">Phishing heuristics engine operational</span>
+</div>
+</div>
+<p class="font-body-regular text-body-regular text-outline">Analyze suspicious URLs, messages and phishing indicators in real-time telemetry pipelines.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Time Range Selector -->
+<div class="relative">
+<button class="inline-flex items-center gap-space-xs h-9 px-space-md bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant/50 rounded-lg text-caption font-body-semibold transition-colors shadow-sm" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+<span>Last 24 hours</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 bg-surface-container-lowest rounded-lg border border-outline-variant/50 shadow-md py-1 z-20">
+<a class="block px-space-md py-1.5 text-caption text-on-surface hover:bg-surface-container-low transition-colors" href="#">Last 1 hour</a>
+<a class="block px-space-md py-1.5 text-caption font-body-semibold text-primary bg-surface-container transition-colors" href="#">Last 24 hours</a>
+<a class="block px-space-md py-1.5 text-caption text-on-surface hover:bg-surface-container-low transition-colors" href="#">Last 7 days</a>
+<a class="block px-space-md py-1.5 text-caption text-on-surface hover:bg-surface-container-low transition-colors" href="#">Last 30 days</a>
+</div>
+</div>
+<!-- Refresh Button -->
+<button class="h-9 w-9 inline-flex items-center justify-center bg-surface-container-lowest hover:bg-surface-container-low text-outline hover:text-on-surface border border-outline-variant/50 rounded-lg transition-colors shadow-sm" onclick="triggerFeedback('Telemetry feeds synchronized across cluster')" title="Refresh Telemetry">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<!-- Secondary: Recent Analyses -->
+<button class="inline-flex items-center gap-space-xs h-9 px-space-md bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant/50 rounded-lg text-caption font-body-semibold transition-colors shadow-sm" onclick="document.getElementById('recent-analyses-section').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[18px] text-outline">history</span>
+<span>Recent Analyses</span>
+</button>
+<!-- Primary: New Analysis -->
+<button class="inline-flex items-center gap-space-xs h-9 px-space-md bg-primary hover:bg-primary-container text-on-primary rounded-lg text-caption font-body-semibold transition-all shadow-sm active:scale-[0.98]" onclick="document.getElementById('analysis-url-input').focus(); document.getElementById('analysis-url-input').select();">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Analysis</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: ANALYSIS INPUT WORKSPACE -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="px-space-xl pt-space-lg pb-space-sm border-b border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-card-title text-card-title text-on-surface">Analyze suspicious content</h2>
+<p class="font-caption text-caption text-outline">Submit endpoints, raw email headers, or chat hooks for real-time lexical disassembly.</p>
+</div>
+<!-- Input Type Segmented Tabs -->
+<div class="inline-flex p-0.5 rounded-lg bg-surface-container border border-outline-variant/30">
+<button class="px-space-md py-1 rounded-lg text-caption font-body-semibold bg-surface-container-lowest text-primary shadow-xs transition-all" id="tab-btn-url" onclick="switchInputTab('url')">URL</button>
+<button class="px-space-md py-1 rounded-lg text-caption font-body-semibold text-outline hover:text-on-surface transition-all" id="tab-btn-email" onclick="switchInputTab('email')">Email</button>
+<button class="px-space-md py-1 rounded-lg text-caption font-body-semibold text-outline hover:text-on-surface transition-all" id="tab-btn-message" onclick="switchInputTab('message')">Message</button>
+</div>
+</div>
+<div class="p-space-xl space-y-space-md">
+<!-- URL Input View -->
+<div class="space-y-space-sm" id="tab-pane-url">
+<div class="flex flex-col md:flex-row items-stretch gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">link</span>
+<input class="w-full h-11 pl-10 pr-24 bg-surface-container-low text-on-surface font-tech-mono-base text-tech-mono-base rounded-lg border border-outline-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="analysis-url-input" placeholder="Enter target URL (e.g. https://...)" type="text" value="https://secure-account.example-login.com/verify"/>
+<div class="absolute right-space-sm top-1/2 -translate-y-1/2 flex items-center gap-space-xs">
+<button class="p-1 text-outline hover:text-on-surface rounded transition-colors" onclick="document.getElementById('analysis-url-input').value=''" title="Clear input">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<button class="px-1.5 py-0.5 text-[11px] font-body-semibold text-primary hover:bg-primary/10 rounded transition-colors" onclick="navigator.clipboard.readText().then(text =&gt; document.getElementById('analysis-url-input').value = text)" title="Paste from clipboard">
+                  Paste
+                </button>
+</div>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs h-11 px-space-xl bg-primary hover:bg-primary-container text-on-primary rounded-lg text-body-semibold font-body-semibold transition-all shadow-sm active:scale-[0.98] shrink-0" onclick="triggerFeedback('Heuristics evaluation completed: PH-2026-00418')">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Analyze URL</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Analysis evaluates lexical URL features, heuristics ML classification signals, and external threat feeds when available.</span>
+</div>
+</div>
+<!-- Email Tab Hidden Shell -->
+<div class="hidden space-y-space-sm" id="tab-pane-email">
+<textarea class="w-full p-space-md bg-surface-container-low text-on-surface font-tech-mono-sm text-tech-mono-sm rounded-lg border border-outline-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Paste full raw email payload including headers (Received, From, DKIM-Signature, Authentication-Results)..." rows="3"></textarea>
+<div class="flex justify-end">
+<button class="h-9 px-space-lg bg-primary text-on-primary rounded-lg text-caption font-body-semibold" onclick="triggerFeedback('Email header parser initiated')">Analyze Headers</button>
+</div>
+</div>
+<!-- Message Tab Hidden Shell -->
+<div class="hidden space-y-space-sm" id="tab-pane-message">
+<textarea class="w-full p-space-md bg-surface-container-low text-on-surface font-body-regular text-body-regular rounded-lg border border-outline-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Paste body text from SMS, Teams, Slack, or webhook payload..." rows="3"></textarea>
+<div class="flex justify-end">
+<button class="h-9 px-space-lg bg-primary text-on-primary rounded-lg text-caption font-body-semibold" onclick="triggerFeedback('Natural Language ML classifier initiated')">Classify Message</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: ACTIVE ANALYSIS RESULT HEADER (PH-2026-00418) -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-sm p-space-lg relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ea580c]"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<!-- Left: Risk Verdict & Score -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col">
+<span class="font-meta-badge text-meta-badge uppercase text-outline tracking-wider">Classification Verdict</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa] uppercase tracking-wide">
+                  HIGH RISK
+                </span>
+<span class="font-card-title text-card-title text-on-surface font-semibold">Likely Phishing</span>
+</div>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/40 hidden sm:block"></div>
+<!-- Score Gauge Bar -->
+<div class="flex flex-col min-w-[180px]">
+<div class="flex items-center justify-between">
+<span class="font-meta-badge text-meta-badge uppercase text-outline tracking-wider">Calculated Risk</span>
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#c2410c]">87 / 100</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-gradient-to-r from-[#ea580c] to-[#dc2626] h-full rounded-full transition-all duration-700" style="width: 87%"></div>
+</div>
+</div>
+</div>
+<!-- Right: Telemetry Metadata Pills -->
+<div class="flex items-center gap-space-sm flex-wrap text-caption">
+<div class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/40 rounded-lg flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Confidence</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">94%</span>
+</div>
+<div class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/40 rounded-lg flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Analysis ID</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">PH-2026-00418</span>
+</div>
+<div class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/40 rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-outline">schedule</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface">2 min ago</span>
+</div>
+<div class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/40 rounded-lg hidden xl:flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Engine</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface-variant">Phishing AI v4.2 + Lexical Model</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: TWO-COLUMN MAIN INVESTIGATION GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN (~62% width: 7-8 cols on 12-col grid) -->
+<div class="lg:col-span-7 xl:col-span-8 space-y-space-xl">
+<!-- MODULE A: Why this was flagged -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="px-space-xl py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<h3 class="font-card-title text-card-title text-on-surface">Why this was flagged</h3>
+</div>
+<span class="font-meta-badge text-meta-badge text-outline uppercase tracking-wider">ML &amp; Heuristic Classification Signals (5)</span>
+</div>
+<div class="p-space-xl space-y-space-md">
+<!-- Signal 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start justify-between gap-space-md hover:bg-surface-container/60 transition-colors">
+<div class="space-y-1 min-w-0 flex-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-on-surface">Lookalike login domain detected</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa] uppercase">High Severity</span>
+</div>
+<p class="font-caption text-caption text-outline">Domain structure mimics an authorized SSO authentication portal but resolves under an unverified registered entity.</p>
+<div class="pt-1 flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Evidence:</span>
+<code class="font-tech-mono-sm text-tech-mono-sm px-1.5 py-0.5 bg-surface-container rounded text-on-surface">secure-account.example-login.com</code>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#ea580c] text-[20px] shrink-0">warning</span>
+</div>
+<!-- Signal 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start justify-between gap-space-md hover:bg-surface-container/60 transition-colors">
+<div class="space-y-1 min-w-0 flex-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-on-surface">Credential harvesting request detected</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa] uppercase">High Severity</span>
+</div>
+<p class="font-caption text-caption text-outline">DOM form action routes to an unauthenticated handler with explicit password &amp; 2FA token parameter masks.</p>
+<div class="pt-1 flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Evidence:</span>
+<code class="font-tech-mono-sm text-tech-mono-sm px-1.5 py-0.5 bg-surface-container rounded text-on-surface">Form action targets /verify with password &amp; 2FA parameter masks</code>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#ea580c] text-[20px] shrink-0">key_off</span>
+</div>
+<!-- Signal 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start justify-between gap-space-md hover:bg-surface-container/60 transition-colors">
+<div class="space-y-1 min-w-0 flex-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-on-surface">Urgency &amp; deceptive language</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#fef3c7] text-[#b45309] border border-[#fde68a] uppercase">Medium Severity</span>
+</div>
+<p class="font-caption text-caption text-outline">Payload body mimics high-priority IT escalation with an immediate account lock deadline coercion trigger.</p>
+<div class="pt-1 flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Evidence:</span>
+<code class="font-tech-mono-sm text-tech-mono-sm px-1.5 py-0.5 bg-surface-container rounded text-on-surface">Token payload matches "Account suspended in 24h unless verified" pattern</code>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#d97706] text-[20px] shrink-0">crisis_alert</span>
+</div>
+<!-- Signal 4 -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start justify-between gap-space-md hover:bg-surface-container/60 transition-colors">
+<div class="space-y-1 min-w-0 flex-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-on-surface">Suspicious URL lexical structure</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#fef3c7] text-[#b45309] border border-[#fde68a] uppercase">Medium Severity</span>
+</div>
+<p class="font-caption text-caption text-outline">Entropy calculation exceeds normal authentic sign-in URLs with atypical character dispersion and multi-level prefixing.</p>
+<div class="pt-1 flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Evidence:</span>
+<code class="font-tech-mono-sm text-tech-mono-sm px-1.5 py-0.5 bg-surface-container rounded text-on-surface">High entropy score (4.82), 2 nested subdomain levels, 58 character length</code>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#d97706] text-[20px] shrink-0">data_array</span>
+</div>
+<!-- Signal 5 -->
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start justify-between gap-space-md hover:bg-surface-container/60 transition-colors">
+<div class="space-y-1 min-w-0 flex-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-on-surface">Multi-hop HTTP 302 redirect chain</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#fef3c7] text-[#b45309] border border-[#fde68a] uppercase">Medium Severity</span>
+</div>
+<p class="font-caption text-caption text-outline">Initial resolution invokes multiple intermediate hops intended to circumvent traditional stateless gateway filters.</p>
+<div class="pt-1 flex items-center gap-space-xs">
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Evidence:</span>
+<code class="font-tech-mono-sm text-tech-mono-sm px-1.5 py-0.5 bg-surface-container rounded text-on-surface">Initial redirect hop through transient CDN endpoint to target payload</code>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#d97706] text-[20px] shrink-0">alt_route</span>
+</div>
+<!-- Architectural Note -->
+<div class="pt-space-xs flex items-center gap-space-xs text-[11px] font-caption text-outline">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+<span>Architectural Note: Signals represent machine-learning classification heuristics and do not imply confirmed breach without policy correlation.</span>
+</div>
+</div>
+</div>
+<!-- MODULE B: URL Analysis & Lexical Decomposition -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="px-space-xl py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<h3 class="font-card-title text-card-title text-on-surface">URL Analysis &amp; Lexical Decomposition</h3>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">RFC 3986 COMPLIANT</span>
+</div>
+<div class="p-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Domain</div>
+<div class="text-on-surface font-semibold mt-1 truncate">example-login.com</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Subdomain</div>
+<div class="text-on-surface font-semibold mt-1 truncate">secure-account</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Protocol / Cert</div>
+<div class="text-on-surface font-semibold mt-1 truncate">HTTPS (Let's Encrypt, 3d)</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">URL Length</div>
+<div class="text-on-surface font-semibold mt-1">58 characters</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Redirect Hops</div>
+<div class="text-on-surface font-semibold mt-1">2 hops (302 Found)</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Entropy Score</div>
+<div class="text-[#c2410c] font-semibold mt-1">4.82 bits/char</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">IP-based Host</div>
+<div class="text-on-surface font-semibold mt-1">No (FQDN validated)</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Classifier Prob.</div>
+<div class="text-[#c2410c] font-semibold mt-1">0.914 (High Phish)</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="font-meta-badge text-meta-badge text-outline uppercase font-sans">Suspicious Tokens</div>
+<div class="text-[#ea580c] font-semibold mt-1 truncate">[login, verify, account, auth]</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE C: Domain & Sender Intelligence (Dual Panels) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Domain Intelligence Panel -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">dns</span>
+<h4 class="font-body-semibold text-body-semibold text-on-surface">Domain Intelligence</h4>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">WHOIS / ASN</span>
+</div>
+<div class="p-space-lg space-y-space-md flex-1">
+<div class="space-y-space-sm font-caption text-caption">
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Domain Name</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">example-login.com</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Registrar</span>
+<span class="font-body-regular text-on-surface">NameCheap Inc. (Demo/Sample)</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Registration Date</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-[#c2410c]">3 days ago (2026-08-11)</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">External Reputation</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-body-semibold bg-surface-container text-on-surface-variant border border-outline-variant/40">
+                    Not available
+                  </span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Threat Intelligence Feed</span>
+<span class="font-caption text-caption text-on-surface text-right">Demo threat intelligence — 1 correlated sinkhole candidate</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-outline">Historical Observations</span>
+<span class="font-body-regular text-on-surface">First-seen across corporate gateway today</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sender / Message Intelligence Panel -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">mark_email_unread</span>
+<h4 class="font-body-semibold text-body-semibold text-on-surface">Sender &amp; Header Preview</h4>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">SMTP AUTH</span>
+</div>
+<div class="p-space-lg space-y-space-md flex-1">
+<div class="space-y-space-sm font-caption text-caption">
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Claimed Sender</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface truncate max-w-[200px]">security-alert@service-notice.net</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">SPF Record</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-tech-mono-sm font-semibold bg-[#fef3c7] text-[#b45309] border border-[#fde68a]">
+                    SoftFail (~all)
+                  </span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">DKIM Validation</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-tech-mono-sm font-semibold bg-[#fee2e2] text-[#b91c1c] border border-[#fecaca]">
+                    Failed (Mismatch)
+                  </span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">DMARC Policy</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-tech-mono-sm font-semibold bg-surface-container text-outline border border-outline-variant/40">
+                    None configured
+                  </span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/20">
+<span class="text-outline">Display Name Mismatch</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa]">
+                    Flagged ("IT Security Team")
+                  </span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-outline">Routing Origin</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface">198.51.100.44 (Relay)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE D: Risk Contributors (Transparent Breakdown) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-space-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-card-title text-card-title text-on-surface">Risk Score Contributors</h4>
+<span class="font-caption text-caption text-outline">Weight distribution aggregating to 87/100</span>
+</div>
+<div class="space-y-space-sm">
+<!-- ML Phishing Classifier -->
+<div>
+<div class="flex justify-between items-center text-caption mb-1">
+<span class="font-body-semibold text-on-surface">ML Phishing Classifier Score</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">35% contribution</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<!-- Domain Lookalike & Newness -->
+<div>
+<div class="flex justify-between items-center text-caption mb-1">
+<span class="font-body-semibold text-on-surface">Domain Lookalike &amp; Young Age (&lt; 7 days)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">25% contribution</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-[#ea580c] h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- Lexical & Token Entropy -->
+<div>
+<div class="flex justify-between items-center text-caption mb-1">
+<span class="font-body-semibold text-on-surface">Lexical Structure &amp; Token Entropy (4.82 bits)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">15% contribution</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-[#d97706] h-full rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Email Authentication Failures -->
+<div>
+<div class="flex justify-between items-center text-caption mb-1">
+<span class="font-body-semibold text-on-surface">Email Authentication Failures (SPF SoftFail + DKIM Fail)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">15% contribution</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-[#dc2626] h-full rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Threat Feed Correlation -->
+<div>
+<div class="flex justify-between items-center text-caption mb-1">
+<span class="font-body-semibold text-on-surface">Threat Feed Correlation (Candidate Sinkhole)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">10% contribution</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (~38% width: 4-5 cols on 12-col grid) -->
+<div class="lg:col-span-5 xl:col-span-4 space-y-space-xl">
+<!-- MODULE A: Recommended Response & Policy Engine Status -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#dc2626] text-[20px]">shield</span>
+<span class="font-body-semibold text-body-semibold text-on-surface">Recommended Response</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-body-semibold bg-[#fee2e2] text-[#b91c1c] border border-[#fecaca] uppercase">
+              QUARANTINE &amp; BLOCK
+            </span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<p class="font-caption text-caption text-outline">High-confidence phishing classification with credential-harvesting indicators detected across gateway.</p>
+<!-- Architectural Distinction Card -->
+<div class="p-space-md rounded-lg bg-surface-container border-l-4 border-primary space-y-1">
+<div class="flex items-center gap-space-xs text-primary font-body-semibold text-caption">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+<span>Enforcement Pipeline Separation</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Phishing AI detected &amp; recommended containment. Policy Engine v4.19 authoritatively approved and dispatched automated enforcement.</p>
+</div>
+<!-- Active Enforcement Card (Status: VERIFIED) -->
+<div class="p-space-md rounded-lg bg-[#f0fdf4] border border-[#bbf7d0] space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-meta-badge text-meta-badge text-[#15803d] uppercase tracking-wider font-semibold">Enforcement Active</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-tech-mono-sm font-bold bg-[#dcfce7] text-[#15803d] border border-[#bbf7d0]">
+                  VERIFIED
+                </span>
+</div>
+<div class="space-y-1 font-caption text-caption">
+<div class="flex justify-between">
+<span class="text-outline">Action:</span>
+<span class="font-body-semibold text-on-surface">Domain &amp; URL Blocked</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Rule Identifier:</span>
+<a class="font-tech-mono-sm text-tech-mono-sm font-semibold text-primary hover:underline" href="#">AFW-9044</a>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Applied by:</span>
+<span class="text-on-surface">Policy Engine v4.19 (Kernel eBPF)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Applied At:</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface">14:32:08 UTC</span>
+</div>
+<div class="flex justify-between items-center pt-1 border-t border-[#bbf7d0]/60">
+<span class="text-outline">Verification Proof:</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-[#15803d] font-semibold">100% Drops (7/7 sinkholed)</span>
+</div>
+</div>
+</div>
+<!-- Operator Action Buttons -->
+<div class="space-y-space-xs pt-space-xs">
+<button class="w-full flex items-center justify-between px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-body-semibold border border-outline-variant/30 transition-colors" onclick="triggerFeedback('Redirecting to Adaptive Firewall rule AFW-9044')">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">security</span>
+<span>View in Adaptive Firewall (AFW-9044)</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-body-semibold border border-outline-variant/30 transition-colors" onclick="triggerFeedback('Dispatching advisories to 3 affected user inboxes')">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">forward_to_inbox</span>
+<span>Notify Affected Users (3)</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-body-semibold border border-outline-variant/30 transition-colors" onclick="triggerFeedback('Active sessions revoked for affected identities')">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">lock_reset</span>
+<span>Isolate Compromised Sessions</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container text-outline hover:text-on-surface rounded-lg text-caption font-body-semibold border border-outline-variant/50 transition-colors" onclick="exportForensicsJson()">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Forensics (JSON)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODULE B: Related Entities & Impact Scope -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<h4 class="font-body-semibold text-body-semibold text-on-surface">Related Entities &amp; Scope</h4>
+<span class="font-meta-badge text-meta-badge text-outline uppercase">Cross-Module Pivot</span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Affected Users -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-outline">Affected Users (3 recipients):</span>
+<a class="font-caption text-caption text-primary hover:underline" href="#">Identity Security →</a>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                  student01
+                  <span class="text-[10px] text-outline font-sans">(Contained)</span>
+</span>
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">
+                  student23
+                </span>
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">
+                  admin04
+                </span>
+</div>
+</div>
+<!-- Devices Reached -->
+<div class="space-y-1 pt-2 border-t border-outline-variant/20">
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-outline">Devices Reached (4 endpoints):</span>
+<a class="font-caption text-caption text-primary hover:underline" href="#">Network Intelligence →</a>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">Device-21</span>
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">Device-31</span>
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">Device-44</span>
+<span class="px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-outline">+1 more</span>
+</div>
+</div>
+<!-- Source Senders / IPs -->
+<div class="space-y-1 pt-2 border-t border-outline-variant/20">
+<span class="font-caption text-caption text-outline">Source Relay Infrastructure:</span>
+<div class="flex items-center gap-1.5 flex-wrap">
+<code class="px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">198.51.100.44</code>
+<code class="px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant/30 font-tech-mono-sm text-tech-mono-sm text-on-surface">203.0.113.18</code>
+</div>
+</div>
+<!-- Correlated Incidents -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#c2410c] text-[18px]">local_police</span>
+<div>
+<div class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">INC-1035</div>
+<div class="font-caption text-[11px] text-outline truncate max-w-[190px]">Credential Harvesting Campaign</div>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-body-semibold" href="#">View Case →</a>
+</div>
+</div>
+</div>
+<!-- MODULE C: Contextual AI Analyst Briefing (Qwen Security Engine) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden border-l-4 border-l-primary">
+<div class="px-space-lg py-space-md border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">psychology</span>
+<h4 class="font-body-semibold text-body-semibold text-on-surface">AI Analyst Assessment</h4>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-tech-mono-sm font-semibold bg-surface-container text-on-surface">
+              94.0% Confidence
+            </span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<p class="font-body-regular text-caption text-on-surface leading-relaxed">
+              The analyzed target demonstrates deliberate deceptive formatting mimicking enterprise Single Sign-On workflows. High lexical token overlap combined with unauthenticated SMTP relay signals indicates active spear-phishing. Immediate domain sinkholing and credential rotation are advised.
+            </p>
+<div class="flex items-center gap-space-xs text-[11px] font-caption text-outline">
+<span class="material-symbols-outlined text-[14px]">link</span>
+<span>5 evidence references linked to enterprise graph</span>
+</div>
+<div class="pt-space-xs flex items-center gap-space-sm">
+<button class="flex-1 px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-body-semibold border border-outline-variant/30 transition-colors" onclick="triggerFeedback('Opening full heuristics evidence tree modal')">
+                Evidence Tree
+              </button>
+<button class="flex-1 px-space-md py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded-lg text-caption font-body-semibold transition-colors" onclick="triggerFeedback('Querying AI Analyst model...')">
+                Ask AI Analyst
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: RECENT PHISHING ANALYSES TABLE WORKSPACE -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden" id="recent-analyses-section">
+<!-- Table Header & Filter Bar -->
+<div class="p-space-xl border-b border-outline-variant/30 space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-card-title text-card-title text-on-surface">Recent Phishing Analyses</h3>
+<p class="font-caption text-caption text-outline">Audit log of processed URLs, messages, and autonomous gateway interventions.</p>
+</div>
+<!-- Table Search Bar -->
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="w-full h-9 pl-9 pr-space-md bg-surface-container-low text-on-surface font-caption text-caption rounded-lg border border-outline-variant/50 focus:outline-none focus:border-primary transition-all" id="table-search-input" onkeyup="filterTableRows()" placeholder="Search URL, domain, or ID..." type="text"/>
+</div>
+</div>
+<!-- Filter Chips Row -->
+<div class="flex items-center gap-space-sm flex-wrap pt-space-xs">
+<!-- Risk Filter -->
+<div class="flex items-center gap-1 text-caption">
+<span class="text-outline font-meta-badge text-meta-badge uppercase mr-1">Risk:</span>
+<button class="filter-chip px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-primary text-on-primary" onclick="setFilter('risk', 'all', this)">All</button>
+<button class="filter-chip px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('risk', 'high', this)">High</button>
+<button class="filter-chip px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('risk', 'medium', this)">Medium</button>
+<button class="filter-chip px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('risk', 'low', this)">Low</button>
+</div>
+<div class="h-4 w-px bg-outline-variant/40 hidden md:block"></div>
+<!-- Classification Filter -->
+<div class="flex items-center gap-1 text-caption">
+<span class="text-outline font-meta-badge text-meta-badge uppercase mr-1">Class:</span>
+<button class="filter-chip-class px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-primary text-on-primary" onclick="setFilter('class', 'all', this)">All</button>
+<button class="filter-chip-class px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('class', 'likely', this)">Likely Phishing</button>
+<button class="filter-chip-class px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('class', 'suspicious', this)">Suspicious</button>
+<button class="filter-chip-class px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('class', 'benign', this)">Benign</button>
+</div>
+<div class="h-4 w-px bg-outline-variant/40 hidden xl:block"></div>
+<!-- Response Status Filter -->
+<div class="flex items-center gap-1 text-caption">
+<span class="text-outline font-meta-badge text-meta-badge uppercase mr-1">Response:</span>
+<button class="filter-chip-resp px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-primary text-on-primary" onclick="setFilter('response', 'all', this)">All</button>
+<button class="filter-chip-resp px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('response', 'blocked', this)">Blocked</button>
+<button class="filter-chip-resp px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('response', 'quarantined', this)">Quarantined</button>
+<button class="filter-chip-resp px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface" onclick="setFilter('response', 'allowed', this)">Allowed</button>
+</div>
+</div>
+</div>
+<!-- High-Density Telemetric Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="analyses-table">
+<thead>
+<tr class="bg-surface-container-low text-outline font-meta-badge text-meta-badge uppercase tracking-wider border-b border-outline-variant/30">
+<th class="py-space-sm px-space-lg">Risk Score</th>
+<th class="py-space-sm px-space-lg">Target URL / Asset</th>
+<th class="py-space-sm px-space-lg">Classification</th>
+<th class="py-space-sm px-space-lg">Confidence</th>
+<th class="py-space-sm px-space-lg">Affected</th>
+<th class="py-space-sm px-space-lg">Enforcement Response</th>
+<th class="py-space-sm px-space-lg text-right">Analyzed</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-regular text-body-regular">
+<!-- Row 1: Active Focus Item -->
+<tr class="table-row-item hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/30" data-class="likely" data-response="blocked" data-risk="high">
+<td class="py-space-sm px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#c2410c]">87</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa] uppercase">High</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="flex flex-col min-w-0 max-w-xs md:max-w-md">
+<div class="flex items-center gap-1.5">
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface truncate">https://secure-account.example-login.com/verify</span>
+<span class="px-1.5 py-0.2 rounded text-[9px] font-tech-mono-sm font-bold bg-primary text-on-primary">ACTIVE</span>
+</div>
+<span class="font-caption text-[11px] text-outline truncate">PH-2026-00418 · example-login.com</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-semibold text-caption text-[#c2410c]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+                  Likely Phishing
+                </span>
+</td>
+<td class="py-space-sm px-space-lg font-tech-mono-sm text-tech-mono-sm text-on-surface">94%</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-caption font-tech-mono-sm font-medium text-on-surface">
+                  3 users
+                </span>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fee2e2] text-[#b91c1c] border border-[#fecaca] text-caption font-tech-mono-sm font-semibold">
+<span>BLOCKED (AFW-9044)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]" title="Kernel verified drops"></span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg text-right font-tech-mono-sm text-tech-mono-sm text-outline">2 min ago</td>
+</tr>
+<!-- Row 2 -->
+<tr class="table-row-item hover:bg-surface-container-low/70 transition-colors" data-class="likely" data-response="blocked" data-risk="high">
+<td class="py-space-sm px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#c2410c]">82</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-body-semibold bg-[#ffedd5] text-[#c2410c] border border-[#fed7aa] uppercase">High</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="flex flex-col min-w-0 max-w-xs md:max-w-md">
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface truncate">https://login-okta-auth.net/sso/v2</span>
+<span class="font-caption text-[11px] text-outline truncate">PH-2026-00412 · login-okta-auth.net</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-semibold text-caption text-[#c2410c]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+                  Likely Phishing
+                </span>
+</td>
+<td class="py-space-sm px-space-lg font-tech-mono-sm text-tech-mono-sm text-on-surface">91%</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-caption font-tech-mono-sm font-medium text-on-surface">
+                  12 users
+                </span>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fee2e2] text-[#b91c1c] border border-[#fecaca] text-caption font-tech-mono-sm font-semibold">
+<span>BLOCKED Verified</span>
+</span>
+</td>
+<td class="py-space-sm px-space-lg text-right font-tech-mono-sm text-tech-mono-sm text-outline">14 min ago</td>
+</tr>
+<!-- Row 3 -->
+<tr class="table-row-item hover:bg-surface-container-low/70 transition-colors" data-class="suspicious" data-response="quarantined" data-risk="medium">
+<td class="py-space-sm px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#b45309]">64</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-body-semibold bg-[#fef3c7] text-[#b45309] border border-[#fde68a] uppercase">Med</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="flex flex-col min-w-0 max-w-xs md:max-w-md">
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface truncate">https://docs-sharing-portal.app/file/download</span>
+<span class="font-caption text-[11px] text-outline truncate">PH-2026-00398 · docs-sharing-portal.app</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-semibold text-caption text-[#b45309]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#d97706]"></span>
+                  Suspicious
+                </span>
+</td>
+<td class="py-space-sm px-space-lg font-tech-mono-sm text-tech-mono-sm text-on-surface">78%</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-caption font-tech-mono-sm font-medium text-on-surface">
+                  1 user
+                </span>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fef3c7] text-[#b45309] border border-[#fde68a] text-caption font-tech-mono-sm font-semibold">
+<span>QUARANTINED</span>
+</span>
+</td>
+<td class="py-space-sm px-space-lg text-right font-tech-mono-sm text-tech-mono-sm text-outline">1h ago</td>
+</tr>
+<!-- Row 4 -->
+<tr class="table-row-item hover:bg-surface-container-low/70 transition-colors" data-class="benign" data-response="allowed" data-risk="low">
+<td class="py-space-sm px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#15803d]">24</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-body-semibold bg-[#dcfce7] text-[#15803d] border border-[#bbf7d0] uppercase">Low</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="flex flex-col min-w-0 max-w-xs md:max-w-md">
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface truncate">https://internal-kb.example.edu/vpn-guide</span>
+<span class="font-caption text-[11px] text-outline truncate">PH-2026-00384 · internal-kb.example.edu</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-semibold text-caption text-[#15803d]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                  Benign
+                </span>
+</td>
+<td class="py-space-sm px-space-lg font-tech-mono-sm text-tech-mono-sm text-on-surface">98%</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-caption font-tech-mono-sm font-medium text-on-surface">
+                  48 users
+                </span>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#dcfce7] text-[#15803d] border border-[#bbf7d0] text-caption font-tech-mono-sm font-semibold">
+<span>ALLOWED</span>
+</span>
+</td>
+<td class="py-space-sm px-space-lg text-right font-tech-mono-sm text-tech-mono-sm text-outline">3h ago</td>
+</tr>
+<!-- Row 5 -->
+<tr class="table-row-item hover:bg-surface-container-low/70 transition-colors" data-class="benign" data-response="allowed" data-risk="low">
+<td class="py-space-sm px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#15803d]">12</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-body-semibold bg-[#dcfce7] text-[#15803d] border border-[#bbf7d0] uppercase">Low</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<div class="flex flex-col min-w-0 max-w-xs md:max-w-md">
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface truncate">https://github.com/enterprise/auth-proxy</span>
+<span class="font-caption text-[11px] text-outline truncate">PH-2026-00361 · github.com</span>
+</div>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-semibold text-caption text-[#15803d]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                  Benign
+                </span>
+</td>
+<td class="py-space-sm px-space-lg font-tech-mono-sm text-tech-mono-sm text-on-surface">99%</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-caption font-tech-mono-sm font-medium text-on-surface">
+                  14 users
+                </span>
+</td>
+<td class="py-space-sm px-space-lg">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#dcfce7] text-[#15803d] border border-[#bbf7d0] text-caption font-tech-mono-sm font-semibold">
+<span>ALLOWED</span>
+</span>
+</td>
+<td class="py-space-sm px-space-lg text-right font-tech-mono-sm text-tech-mono-sm text-outline">5h ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-space-xl py-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest">
+<span class="font-caption text-caption text-outline">Showing <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">1-5</span> of <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">38</span> analyses</span>
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-space-sm bg-surface-container-low text-outline hover:text-on-surface rounded border border-outline-variant/40 disabled:opacity-40 text-caption font-body-semibold" disabled="">Previous</button>
+<button class="h-8 w-8 bg-primary text-on-primary rounded text-caption font-body-semibold">1</button>
+<button class="h-8 w-8 bg-surface-container-low text-on-surface hover:bg-surface-container rounded text-caption font-body-semibold">2</button>
+<button class="h-8 w-8 bg-surface-container-low text-on-surface hover:bg-surface-container rounded text-caption font-body-semibold">3</button>
+<button class="h-8 w-8 bg-surface-container-low text-on-surface hover:bg-surface-container rounded text-caption font-body-semibold">4</button>
+<button class="h-8 px-space-sm bg-surface-container-low text-on-surface hover:bg-surface-container rounded border border-outline-variant/40 text-caption font-body-semibold">Next</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Filter States
+  let currentFilters = {
+    risk: 'all',
+    class: 'all',
+    response: 'all'
+  };
+
+  function switchInputTab(tab) {
+    const tabs = ['url', 'email', 'message'];
+    tabs.forEach(t => {
+      const pane = document.getElementById(`tab-pane-${t}`);
+      const btn = document.getElementById(`tab-btn-${t}`);
+      if (t === tab) {
+        pane.classList.remove('hidden');
+        btn.className = 'px-space-md py-1 rounded-lg text-caption font-body-semibold bg-surface-container-lowest text-primary shadow-xs transition-all';
+      } else {
+        pane.classList.add('hidden');
+        btn.className = 'px-space-md py-1 rounded-lg text-caption font-body-semibold text-outline hover:text-on-surface transition-all';
+      }
+    });
+  }
+
+  function setFilter(category, value, elem) {
+    currentFilters[category] = value;
+    
+    // Toggle active classes on clicked chip group
+    let classNameTarget = category === 'risk' ? '.filter-chip' : category === 'class' ? '.filter-chip-class' : '.filter-chip-resp';
+    document.querySelectorAll(classNameTarget).forEach(b => {
+      b.className = `${classNameTarget.replace('.', '')} px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-surface-container-low text-outline hover:text-on-surface`;
+    });
+    elem.className = `${classNameTarget.replace('.', '')} px-2.5 py-1 rounded-lg text-caption font-body-semibold bg-primary text-on-primary`;
+
+    applyTableFilters();
+  }
+
+  function filterTableRows() {
+    applyTableFilters();
+  }
+
+  function applyTableFilters() {
+    const query = (document.getElementById('table-search-input').value || '').toLowerCase();
+    const rows = document.querySelectorAll('.table-row-item');
+
+    rows.forEach(row => {
+      const risk = row.getAttribute('data-risk');
+      const classification = row.getAttribute('data-class');
+      const response = row.getAttribute('data-response');
+      const text = row.innerText.toLowerCase();
+
+      const matchesRisk = currentFilters.risk === 'all' || risk === currentFilters.risk;
+      const matchesClass = currentFilters.class === 'all' || classification === currentFilters.class;
+      const matchesResponse = currentFilters.response === 'all' || response === currentFilters.response;
+      const matchesQuery = query === '' || text.includes(query);
+
+      if (matchesRisk && matchesClass && matchesResponse && matchesQuery) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function triggerFeedback(message) {
+    const banner = document.getElementById('toast-banner');
+    const msg = document.getElementById('toast-message');
+    msg.textContent = message;
+    banner.classList.remove('translate-y-20', 'opacity-0');
+    banner.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      banner.classList.remove('translate-y-0', 'opacity-100');
+      banner.classList.add('translate-y-20', 'opacity-0');
+    }, 3200);
+  }
+
+  function exportForensicsJson() {
+    const sampleData = {
+      analysis_id: "PH-2026-00418",
+      timestamp_utc: "2026-08-14T14:32:08Z",
+      classification: "Likely Phishing",
+      risk_score: 87,
+      target_url: "https://secure-account.example-login.com/verify",
+      lexical_entropy: 4.82,
+      enforcement: {
+        action: "QUARANTINE_AND_BLOCK",
+        rule_id: "AFW-9044",
+        policy_engine_version: "4.19",
+        kernel_sinkhole_drops: "100%"
+      }
+    };
+    
+    const blob = new Blob([JSON.stringify(sampleData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `phishing_forensics_PH-2026-00418.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    triggerFeedback('Forensics manifest PH-2026-00418 downloaded');
+  }
+</script></main></div></body></html>

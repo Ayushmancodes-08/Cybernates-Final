@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "primary-fixed": "#dbe1ff", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "surface": "#f8f9ff", "surface-bright": "#f8f9ff", "secondary-container": "#d7dff9", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "error-container": "#ffdad6", "primary-container": "#2563eb", "inverse-primary": "#b4c5ff", "surface-tint": "#0053db", "inverse-on-surface": "#eaf1ff", "tertiary": "#005d73", "on-secondary-container": "#5a6278", "secondary": "#555e74", "tertiary-container": "#007793", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#001f28", "on-primary-fixed-variant": "#003ea8", "on-primary-fixed": "#00174b", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004e61", "inverse-surface": "#213145", "tertiary-fixed-dim": "#6cd3f7", "outline-variant": "#c3c6d7", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#3e475b", "on-surface-variant": "#434655", "outline": "#737686", "on-secondary-fixed": "#121b2e", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-fixed": "#d9e2fc", "primary": "#004ac6", "on-tertiary-container": "#dcf4ff", "on-error-container": "#93000a", "on-primary-container": "#eeefff", "secondary-fixed-dim": "#bdc6e0", "on-background": "#0b1c30", "background": "#f8f9ff", "tertiary-fixed": "#b7eaff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-lg": "2rem", "margin-sm": "1rem", "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem" }, "fontFamily": { "tech-mono-sm": ["JetBrains Mono"], "card-title": ["Inter"], "section-title-mobile": ["Inter"], "tech-mono-base": ["JetBrains Mono"], "display-title": ["Inter"], "display-title-mobile": ["Inter"], "body-regular": ["Inter"], "section-title": ["Inter"], "meta-badge": ["Inter"], "caption": ["Inter"], "body-semibold": ["Inter"] }, "fontSize": { "tech-mono-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "card-title": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "section-title-mobile": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tech-mono-base": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "display-title": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-title-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-regular": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "section-title": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "meta-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-semibold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-regular text-body-regular text-on-surface antialiased"><aside class="fixed inset-y-0 left-0 z-50 w-64 bg-inverse-surface flex flex-col transition-transform duration-200 ease-in-out -translate-x-full lg:translate-x-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" id="app-sidebar"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-inverse-surface/80 shrink-0"><img alt="CyberGuard Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W0LlZVr67H8U73st9v8uu31MpGifyWtIqGXvkSnVeDV7k9QtYEEICK9jRhPEL4anr5LRlqjJGAsh2I5SVx2XJ11FxdmQBRKNJD3kQbTeJDV40ZS_lRVDlm8XEgvzwmugshSu7o9znWcPkeAY3zqIazxXBRpmKzOos2lfWqZrGIPgLE2REgPuXACB7d8zlJmoJ1HGUfjAM7aY5DrkjRyK4HUYAknTiIn3f9O7YN7iDenc3zst2iMi6bRHM"/><div class="flex flex-col min-w-0"><span class="font-card-title text-card-title text-inverse-on-surface tracking-tight truncate">CyberGuard</span><span class="font-meta-badge text-meta-badge text-outline-variant uppercase tracking-wider truncate">Adaptive Security Platform</span></div><button class="lg:hidden ml-auto p-space-xs text-outline-variant hover:text-inverse-on-surface hover:bg-surface-variant/10 rounded-lg" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-lg space-y-space-xl"><nav class="space-y-space-xl" data-active-classes="bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]"><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Overview</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="overview" href="#">Overview</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Security</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="live-threats" href="#">Live Threats</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-colors truncate bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]" data-path="incidents" href="#">Incidents</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="adaptive-firewall" href="#">Adaptive Firewall</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Intelligence</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="network" href="#">Network</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="identity" href="#">Identity</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="phishing" href="#">Phishing</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="ai-analyst" href="#">AI Analyst</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="threat-intelligence" href="#">Threat Intelligence</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Operations</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="response-center" href="#">Response Center</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="simulator" href="#">Simulator</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">System</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="system-health" href="#">System Health</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="settings" href="#">Settings</a></div></div></nav></div><div class="p-space-md bg-inverse-surface/90 shrink-0"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">ENGINE v4.19</span></div><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">SOC-01</span></div></div></aside><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-40 hidden" id="sidebar-backdrop" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"></div><div class="lg:pl-64 flex flex-col min-h-screen"><header class="fixed top-0 right-0 left-0 lg:left-64 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-1"><button class="lg:hidden p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg" onclick="document.getElementById('app-sidebar').classList.remove('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">menu</span></button><div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-caption text-caption"><a class="hover:text-on-surface text-outline-variant transition-colors" data-path="incidents" href="#">Incidents</a><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-tech-mono-base text-tech-mono-base font-semibold">INC-1042</span></div><div class="relative flex-1 max-w-[560px] mx-space-sm"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 bg-surface-container-low text-on-surface placeholder:text-outline text-caption font-body-regular rounded-lg border-0 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search IP, user, device, domain or incident..." type="text"/><kbd class="hidden md:inline-flex absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 bg-surface-container-lowest rounded text-[10px] font-tech-mono-sm text-outline font-semibold shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-1 bg-amber-50 text-amber-800 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span><span class="font-meta-badge text-meta-badge uppercase tracking-wider font-semibold">ELEVATED</span></div><button class="hidden md:inline-flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors border-0"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-caption text-caption font-semibold">All systems operational</span><span class="material-symbols-outlined text-[16px] text-outline">keyboard_arrow_down</span></button><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCT6jP7jRCOx_dsTZ09HouyLkgiW_bDnFeYdm_fUS0qAJyAOeZuYsTrpg-vIYIxAuHlgBDWtEJp7Bn4xtu7nzOfEf09Nwi-ZeWf3XWKdIYMYP9_I--a4ZaNdfXfy6A1Z9QS4XJ8epVRQYhXSiuMkTtQuLDGDuDJuno5_KtNnih4-UCYCMul_5ZwPvzZIU-glZVKQTjUKHih2Fd69scTkVHqtvUgWpE0ipQkOXyaf-gJSBOYKBD0EYUqQ"/><div class="hidden 2xl:flex flex-col text-left"><span class="font-body-semibold text-caption text-on-surface truncate leading-tight">Elena Vance</span><span class="font-meta-badge text-meta-badge text-outline truncate">Lead Security Analyst</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="max-w-[1680px] w-full mx-auto px-margin-sm md:px-margin lg:px-margin-lg py-space-lg space-y-space-lg">
+<!-- Incident Header Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div class="space-y-space-xs min-w-0">
+<div class="flex items-center gap-space-xs font-caption text-caption text-secondary">
+<a class="hover:text-primary transition-colors" href="#">Incidents</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">INC-1042</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">Detected 2 minutes ago</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">Updated just now</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<h1 class="font-display-title text-display-title text-on-surface tracking-tight">
+            Network reconnaissance from 10.0.0.24
+          </h1>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs font-meta-badge text-meta-badge">
+<span class="px-space-sm py-0.5 rounded-lg bg-surface-container font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface tracking-wider">
+            INC-1042
+          </span>
+<span class="px-space-sm py-0.5 rounded-lg bg-[#FFEDD5] text-[#C2410C] font-semibold tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#EA580C]"></span>
+            SEVERITY: HIGH
+          </span>
+<span class="px-space-sm py-0.5 rounded-lg bg-surface-container font-semibold text-on-surface tracking-wider">
+            RISK: 88/100
+          </span>
+<span class="px-space-sm py-0.5 rounded-lg bg-[#DCFCE7] text-[#15803D] font-semibold tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A] animate-pulse"></span>
+            CONTAINED
+          </span>
+<span class="px-space-sm py-0.5 rounded-lg bg-surface-container-low text-secondary font-medium">
+            Assigned: Unassigned (Self-assigned)
+          </span>
+<span class="px-space-sm py-0.5 rounded-lg bg-surface-container-low text-secondary font-tech-mono-sm text-tech-mono-sm">
+            POL-KERNEL-eBPF
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-start lg:self-center">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest text-on-surface font-body-semibold text-body-semibold rounded-lg shadow-sm hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Back to Incidents
+        </button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 bg-primary-container text-on-primary font-body-semibold text-body-semibold rounded-lg shadow-sm hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+          View Firewall Rule (AFW-9042)
+        </button>
+</div>
+</div>
+<!-- Executive Summary Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="p-space-xs rounded-lg bg-surface-container-low text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">radar</span>
+</div>
+<div class="space-y-1 flex-1 min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-card-title text-card-title text-on-surface">Incident Executive Summary</span>
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider px-space-xs py-0.5 bg-surface-container text-secondary rounded">Deterministic Policy Enforcement</span>
+</div>
+<p class="font-body-regular text-body-regular text-on-surface leading-relaxed">
+            CyberGuard detected network reconnaissance originating from <span class="font-tech-mono-base text-tech-mono-base font-semibold text-primary">10.0.0.24</span> after the source contacted 38 internal ports within a 4.2-second burst. The behaviour significantly deviated from the established network baseline. A temporary firewall block was applied and subsequent connections were successfully rejected with zero packet leakage.
+          </p>
+</div>
+</div>
+</div>
+<!-- Top Status Telemetry Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase tracking-wider">Severity Level</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#EA580C]"></span>
+<span class="font-card-title text-card-title text-[#C2410C]">HIGH</span>
+</div>
+<div class="font-caption text-caption text-secondary">Suricata ET EXPLOIT SID:2018442</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase tracking-wider">Calculated Risk</div>
+<div class="flex items-baseline gap-1">
+<span class="font-section-title text-section-title text-on-surface">88</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">/ 100</span>
+</div>
+<div class="font-caption text-caption text-secondary">Deterministic multi-vector score</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase tracking-wider">Operational Status</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
+<span class="font-card-title text-card-title text-[#15803D]">CONTAINED</span>
+</div>
+<div class="font-caption text-caption text-secondary">eBPF Kernel block active</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase tracking-wider">Engine Confidence</div>
+<div class="flex items-baseline gap-1">
+<span class="font-section-title text-section-title text-on-surface">94%</span>
+<span class="font-caption text-caption text-secondary">HIGH</span>
+</div>
+<div class="font-caption text-caption text-secondary">Suricata IDS + Network AI</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-1 col-span-2 md:col-span-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase tracking-wider">Response Verification</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-[#15803D]">verified</span>
+<span class="font-card-title text-card-title text-[#15803D]">100% VERIFIED</span>
+</div>
+<div class="font-caption text-caption text-secondary">12/12 connection probes rejected</div>
+</div>
+</div>
+<!-- Main SOC Investigation Workspace: Two-Column Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Main Column (approx 65%) -->
+<div class="lg:col-span-8 space-y-space-lg min-w-0">
+<!-- Section A: Incident Timeline -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
+<h2 class="font-card-title text-card-title text-on-surface">Telemetry &amp; Response Timeline</h2>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">UTC TIME BASE • REAL-TIME</span>
+</div>
+<div class="relative pl-6 space-y-space-md">
+<!-- Continuous line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-surface-container-low/60 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-on-surface">Network anomaly detected</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:31:54 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                  Source <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">10.0.0.24</span> contacted multiple internal ports in short intervals across local subnet.
+                </p>
+<div class="flex gap-space-xs pt-1">
+<span class="font-meta-badge text-meta-badge bg-surface-container px-1.5 py-0.5 rounded text-secondary">INGRESS_SYN_ANOMALY</span>
+<span class="font-meta-badge text-meta-badge bg-surface-container px-1.5 py-0.5 rounded text-secondary font-tech-mono-sm">flow_id: f-9831a</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#EA580C] ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-surface-container-low/60 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-on-surface">Port-scan pattern identified</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:31:56 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                  38 destination ports contacted within a 4.2-second burst window against gateway asset <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">10.0.10.20</span>.
+                </p>
+<div class="flex gap-space-xs pt-1">
+<span class="font-meta-badge text-meta-badge bg-[#FFEDD5] text-[#C2410C] px-1.5 py-0.5 rounded font-semibold">SYN_BURST_IDENTIFIED</span>
+<span class="font-meta-badge text-meta-badge bg-surface-container px-1.5 py-0.5 rounded text-secondary">Burst: 4.2s</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#EA580C] ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-surface-container-low/60 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-on-surface">Suricata alert correlated</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:01 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                  Network reconnaissance signature matched: <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">ET EXPLOIT TCP Scan (SID: 2018442, Rev 4)</span>.
+                </p>
+<div class="flex gap-space-xs pt-1 font-tech-mono-sm text-tech-mono-sm">
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-secondary">CLASS: Attempted Information Leak</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-secondary">GUA-RULE-84</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#EA580C] ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-surface-container-low/60 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-on-surface">Deterministic risk elevation</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:03 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                  Risk engine escalated score from <span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-secondary">61</span> to <span class="font-tech-mono-sm text-tech-mono-sm font-bold text-[#EA580C]">88</span> based on DMZ boundary traversal attempt.
+                </p>
+</div>
+</div>
+<!-- Timeline Item 5 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-surface-container-low/60 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-primary">Adaptive firewall rule applied</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:07 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                  Source IP <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">10.0.0.24</span> temporarily blocked for 2 hours across all internal gateway fabrics via Rule <span class="font-tech-mono-sm text-tech-mono-sm text-primary font-semibold">AFW-9042</span>.
+                </p>
+<div class="flex gap-space-xs pt-1">
+<span class="font-meta-badge text-meta-badge bg-primary-container text-on-primary px-1.5 py-0.5 rounded font-tech-mono-sm">XDP_DROP_ENFORCED</span>
+<span class="font-meta-badge text-meta-badge bg-surface-container px-1.5 py-0.5 rounded text-secondary">TTL: 7200s</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 6 -->
+<div class="relative flex items-start gap-space-md">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#16A34A] ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 bg-[#DCFCE7]/40 rounded-lg p-space-md space-y-1">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="font-body-semibold text-body-semibold text-[#15803D]">Containment verified</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:25 UTC</span>
+</div>
+<p class="font-body-regular text-body-regular text-on-surface">
+                  12 subsequent connection attempts were deterministically rejected with <span class="font-semibold text-[#15803D]">0 leaked packets</span> verified at kernel layer.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section B: Evidence Workspace (Tabbed) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">dataset</span>
+<h2 class="font-card-title text-card-title text-on-surface">Forensic Evidence &amp; Telemetry</h2>
+</div>
+<!-- Interactive Tabs -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-lg text-secondary font-body-semibold text-caption" id="evidence-tabs">
+<button class="px-space-md py-1 rounded-md bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all" onclick="switchEvidenceTab('network', this)">Network</button>
+<button class="px-space-md py-1 rounded-md hover:text-on-surface transition-all" onclick="switchEvidenceTab('behaviour', this)">Behaviour</button>
+<button class="px-space-md py-1 rounded-md hover:text-on-surface transition-all" onclick="switchEvidenceTab('threat-intel', this)">Threat Intelligence</button>
+</div>
+</div>
+<!-- Tab Content: Network -->
+<div class="space-y-space-md block" id="tab-network">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-space-xs">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Source Vector</span>
+<div class="flex items-center justify-between">
+<span class="font-tech-mono-base text-tech-mono-base font-semibold text-on-surface">10.0.0.24</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">ephemeral:41088-41126</span>
+</div>
+<div class="font-caption text-caption text-secondary">Subnet: 10.0.0.0/24 (Staging VLAN 40)</div>
+</div>
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-space-xs">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Target Destination</span>
+<div class="flex items-center justify-between">
+<span class="font-tech-mono-base text-tech-mono-base font-semibold text-on-surface">10.0.10.20</span>
+<span class="font-meta-badge text-meta-badge bg-surface-container px-1.5 py-0.5 rounded text-secondary font-semibold">DMZ GATEWAY</span>
+</div>
+<div class="font-caption text-caption text-secondary">Subnet: 10.0.10.0/24 (Critical Boundary)</div>
+</div>
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-space-xs">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Protocol &amp; Burst Timing</span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">TCP (SYN burst)</span>
+<span class="font-tech-mono-base text-tech-mono-base font-semibold text-[#EA580C]">4.2s window</span>
+</div>
+<div class="font-caption text-caption text-secondary">Surge threshold exceeded by 7000%</div>
+</div>
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-space-xs">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Enforcement Droprate</span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">31 RST/ACK drops</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-[#15803D] font-semibold">100% Policy Filtered</span>
+</div>
+<div class="font-caption text-caption text-secondary">Kernel XDP hardware offload active</div>
+</div>
+</div>
+<!-- Target Ports Contacted Matrix -->
+<div class="p-space-md bg-surface-container-low/40 rounded-lg space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Target Ports Contacted (38 distinct ports)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">SYN Packets Sent: 38</span>
+</div>
+<div class="flex flex-wrap gap-1.5 font-tech-mono-sm text-tech-mono-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 21 (FTP)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 22 (SSH)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 23 (Telnet)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 80 (HTTP)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 135 (MSRPC)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 139 (NetBIOS)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 443 (HTTPS)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 445 (SMB)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 1433 (MSSQL)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 3306 (MySQL)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 3389 (RDP)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 5432 (Postgres)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 8080 (HTTP-Alt)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-medium shadow-sm">TCP 8443 (HTTPS-Alt)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-medium">+24 other ports</span>
+</div>
+</div>
+<!-- Ingress SYN Rate Visual -->
+<div class="p-space-md bg-surface-container-low/40 rounded-lg space-y-space-xs">
+<div class="flex items-center justify-between text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Ingress SYN Rate Spike</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-[#EA580C] font-semibold">840 pkts/sec (Baseline: 12 pkts/sec)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-primary/30 h-full w-[2%]"></div>
+<div class="bg-[#EA580C] h-full w-[98%]"></div>
+</div>
+<div class="flex justify-between font-tech-mono-sm text-tech-mono-sm text-secondary pt-0.5">
+<span>Normal: 12 pkts/s</span>
+<span>Threshold: 120 pkts/s</span>
+<span class="text-[#EA580C] font-semibold">Observed Peak: 840 pkts/s</span>
+</div>
+</div>
+</div>
+<!-- Tab Content: Behaviour -->
+<div class="space-y-space-md hidden" id="tab-behaviour">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-1">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Baseline Deviation</span>
+<div class="font-section-title text-section-title text-[#C2410C]">94.2%</div>
+<div class="font-caption text-caption text-secondary">Extreme divergence from 30-day profile</div>
+</div>
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-1">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">New Destinations</span>
+<div class="font-section-title text-section-title text-on-surface">31 Assets</div>
+<div class="font-caption text-caption text-secondary">Never contacted prior to 14:30 UTC</div>
+</div>
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-1">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Historical Pattern</span>
+<div class="font-section-title text-section-title text-[#EA580C]">First Seen Today</div>
+<div class="font-caption text-caption text-secondary">Device previously idle daemon role</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/30 rounded-lg space-y-space-xs font-body-regular text-body-regular text-secondary">
+<span class="font-body-semibold text-body-semibold text-on-surface">Behavioural Model Synthesis:</span>
+<p>Host <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface">Device-21 (10.0.0.24)</span> historically generated standard DNS queries (UDP 53) and internal heartbeat telemetry to orchestration servers. The sudden execution of multi-port TCP SYN sweep without corresponding application-layer payload matches automated discovery utility tooling (e.g. masscan / nmap SYN probe).</p>
+</div>
+</div>
+<!-- Tab Content: Threat Intelligence -->
+<div class="space-y-space-md hidden" id="tab-threat-intel">
+<div class="p-space-md bg-surface-container-low/50 rounded-lg space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Demo Threat Intelligence &amp; Local Telemetry</span>
+<span class="font-meta-badge text-meta-badge bg-surface-container px-2 py-0.5 rounded text-secondary font-tech-mono-sm">FEED: INTERNAL-SOC-CACHE</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary">
+                Source IP <span class="font-tech-mono-sm text-tech-mono-sm text-on-surface font-semibold">10.0.0.24</span> is an RFC 1918 private IPv4 allocation. External abuse databases (AbuseIPDB, VirusTotal, AlienVault OTX) have no public records for private space. 
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm bg-surface-container-lowest rounded space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary">INTERNAL INDICATORS</div>
+<div class="font-body-semibold text-body-semibold text-on-surface">3 Correlated Internal Events</div>
+<div class="font-caption text-caption text-secondary">Past 72 hours across Subnet 10.0.0.0/24</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary">THREAT CONFIDENCE</div>
+<div class="font-body-semibold text-body-semibold text-primary">Medium (Internal Reconnaissance)</div>
+<div class="font-caption text-caption text-secondary">Internal lateral movement staging profile</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section C: Risk Explanation ("Why this risk score?") -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+<h2 class="font-card-title text-card-title text-on-surface">Deterministic Risk Attribution (88/100)</h2>
+</div>
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-secondary">Policy Engine v4.19</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Vector 1 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Network Anomaly (SYN Sweep Burst)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-[#EA580C]">+30 pts (High contribution)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-[#EA580C] h-full w-[30%]"></div>
+</div>
+</div>
+<!-- Vector 2 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Behavioural Profile Deviation (First observed sweep)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-[#EA580C]">+20 pts (High contribution)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-[#EA580C] h-full w-[20%]"></div>
+</div>
+</div>
+<!-- Vector 3 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Threat Intelligence &amp; Suricata Signature Match</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-primary">+15 pts (Medium contribution)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[15%]"></div>
+</div>
+</div>
+<!-- Vector 4 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Detection Confidence Calibration</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-primary">+15 pts (High confidence factor)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[15%]"></div>
+</div>
+</div>
+<!-- Vector 5 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Target Asset Criticality (DMZ Ingress Boundary)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-secondary">+10 pts (Medium boundary multiplier)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[10%]"></div>
+</div>
+</div>
+<!-- Vector 6 -->
+<div class="space-y-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="font-body-semibold text-body-semibold text-on-surface">Historical Entity Reputation</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-secondary">+8 pts (Low prior penalty)</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-secondary/60 h-full w-[8%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-xs text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>Calculated by Deterministic Policy Engine v4.19. AI models provide analytical context; policy decisions remain deterministic.</span>
+</div>
+</div>
+<!-- Section D: AI Analyst Briefing (Contextual AI Card) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-card-title text-card-title text-on-surface">AI Analyst — Qwen Security Engine</span>
+</div>
+<p class="font-caption text-caption text-secondary">Evidence-backed investigation summary &amp; containment assessment</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">94.0% Confidence</span>
+</div>
+</div>
+<p class="font-body-regular text-body-regular text-on-surface leading-relaxed">
+            Observed activity is consistent with automated network reconnaissance. The source contacted 38 destination ports within a short interval and generated an unusually high SYN rate compared with its normal baseline. The evidence supports temporary containment.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm p-space-md bg-surface-container-low/50 rounded-lg font-caption text-caption">
+<div class="space-y-1">
+<span class="font-body-semibold text-body-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">fact_check</span>
+                Key Correlated References
+              </span>
+<ul class="list-disc list-inside text-secondary space-y-0.5">
+<li>Suricata SID: 2018442 (TCP Scan)</li>
+<li>Flow Burst: 4.2s across 38 ports</li>
+<li>Target Asset: DMZ Gateway (10.0.10.20)</li>
+</ul>
+</div>
+<div class="space-y-1">
+<span class="font-body-semibold text-body-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#15803D]">recommend</span>
+                Analyst Recommendation
+              </span>
+<p class="text-secondary leading-snug">
+                Maintain containment for the full 2-hour duration. Inspect host process table on Device-21 for unauthorized cron jobs or memory-injected scanning utilities before release.
+              </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface font-body-semibold text-caption rounded-lg transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">help_outline</span>
+                Ask About This Incident
+              </button>
+<button class="px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-body-semibold text-caption rounded-lg transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                Regenerate Analysis
+              </button>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">MODEL: QWEN-SEC-2.5-72B</span>
+</div>
+</div>
+<!-- Section E: Related Events Summary -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<h2 class="font-card-title text-card-title text-on-surface">Correlated Telemetric Cluster (42 Events)</h2>
+</div>
+<a class="font-body-semibold text-caption text-primary hover:underline inline-flex items-center gap-0.5" href="#">
+              View all 42 related events in Live Threats
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm font-caption">
+<div class="p-space-sm bg-surface-container-low/60 rounded-lg">
+<span class="text-secondary block font-meta-badge text-meta-badge uppercase">Port Scans</span>
+<span class="font-section-title text-section-title text-on-surface">38</span>
+<span class="text-secondary block text-[11px]">TCP SYN sweeps</span>
+</div>
+<div class="p-space-sm bg-surface-container-low/60 rounded-lg">
+<span class="text-secondary block font-meta-badge text-meta-badge uppercase">IDS Alerts</span>
+<span class="font-section-title text-section-title text-[#EA580C]">2</span>
+<span class="text-secondary block text-[11px]">Suricata signatures</span>
+</div>
+<div class="p-space-sm bg-surface-container-low/60 rounded-lg">
+<span class="text-secondary block font-meta-badge text-meta-badge uppercase">Rate Anomalies</span>
+<span class="font-section-title text-section-title text-on-surface">1</span>
+<span class="text-secondary block text-[11px]">SYN burst limit</span>
+</div>
+<div class="p-space-sm bg-surface-container-low/60 rounded-lg">
+<span class="text-secondary block font-meta-badge text-meta-badge uppercase">Firewall Drops</span>
+<span class="font-section-title text-section-title text-[#15803D]">1</span>
+<span class="text-secondary block text-[11px]">AFW-9042 Rule</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column / Sidebar (approx 35%) -->
+<div class="lg:col-span-4 space-y-space-lg min-w-0">
+<!-- Section 1: Involved Entities -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<h3 class="font-card-title text-card-title text-on-surface">Involved Entities</h3>
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">SOC ASSET GRAPH</span>
+</div>
+<div class="space-y-space-sm text-caption">
+<!-- Entity 1 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">SOURCE IP</span>
+<a class="font-body-semibold text-caption text-primary hover:underline inline-flex items-center text-[12px]" href="#">
+                  Inspect IP <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<div class="font-tech-mono-base text-tech-mono-base font-semibold text-on-surface">10.0.0.24</div>
+<div class="text-secondary">Internal DMZ staging host</div>
+</div>
+<!-- Entity 2 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">TARGET ASSET</span>
+<a class="font-body-semibold text-caption text-primary hover:underline inline-flex items-center text-[12px]" href="#">
+                  Inspect Asset <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<div class="font-tech-mono-base text-tech-mono-base font-semibold text-on-surface">10.0.10.20:22</div>
+<div class="text-secondary">DMZ Gateway Server (Critical)</div>
+</div>
+<!-- Entity 3 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase">RELATED HOST</div>
+<div class="font-body-semibold text-body-semibold text-on-surface">Device-21 (Ubuntu 22.04 LTS)</div>
+<div class="text-secondary font-tech-mono-sm text-tech-mono-sm">KERNEL: 5.15.0-89-generic</div>
+</div>
+<!-- Entity 4 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase">NETWORK SUBNET</div>
+<div class="font-tech-mono-base text-tech-mono-base text-on-surface">10.0.0.0/24 (VLAN 40)</div>
+<div class="text-secondary">Staging Segment • East-West Traffic</div>
+</div>
+<!-- Entity 5 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg space-y-1">
+<div class="font-meta-badge text-meta-badge text-secondary uppercase">ATTRIBUTED IDENTITY</div>
+<div class="font-body-semibold text-body-semibold text-on-surface">Unknown / Service Account Daemon</div>
+<div class="text-secondary">No interactive SSH session logged</div>
+</div>
+</div>
+</div>
+<!-- Section 2: CyberGuard Adaptive Response -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<h3 class="font-card-title text-card-title text-on-surface">Adaptive Response</h3>
+<span class="font-meta-badge text-meta-badge bg-[#DCFCE7] text-[#15803D] px-2 py-0.5 rounded font-semibold">APPLIED &amp; ACTIVE</span>
+</div>
+<div class="space-y-space-xs text-caption">
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Action</span>
+<span class="font-body-semibold text-body-semibold text-on-surface">Temporary IP Block</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Target Filter</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-on-surface">10.0.0.24/32</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Duration</span>
+<span class="font-body-semibold text-body-semibold text-[#C2410C]">2 Hours (Expires in 1h 57m)</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Rule Identifier</span>
+<span class="font-tech-mono-sm text-tech-mono-sm font-semibold text-primary">AFW-9042</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Creation Timestamp</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface">14:32:07 UTC</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-low">
+<span class="text-secondary">Decision Engine</span>
+<span class="font-body-semibold text-body-semibold text-on-surface">Deterministic Policy (eBPF XDP)</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-secondary">Trigger Rationale</span>
+<span class="text-right text-secondary">Reconnaissance Burst Deviation</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Response Verification (Semantic Green Box) -->
+<div class="bg-[#DCFCE7]/60 rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#15803D] text-[20px]">verified</span>
+<h3 class="font-card-title text-card-title text-[#15803D]">Response Verification</h3>
+</div>
+<span class="font-meta-badge text-meta-badge bg-surface-container-lowest text-[#15803D] px-2 py-0.5 rounded font-semibold shadow-sm">
+              100% BLOCKED
+            </span>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-lg space-y-space-xs">
+<div class="flex justify-between items-baseline">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Subsequent Attempts</span>
+<span class="font-tech-mono-base text-tech-mono-base font-semibold text-on-surface">12 / 12 Rejected</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Leaked Packets</span>
+<span class="font-tech-mono-base text-tech-mono-base font-bold text-[#15803D]">0 packets (0 bytes)</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-meta-badge text-meta-badge text-secondary uppercase">Last Probe Checked</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:25 UTC (18s post-rule)</span>
+</div>
+</div>
+<div class="font-caption text-caption text-[#15803D] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+<span>Continuous kernel-level eBPF filter validation active.</span>
+</div>
+</div>
+<!-- Section 4: MITRE ATT&CK Mapping -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-card-title text-card-title text-on-surface">MITRE ATT&amp;CK</h3>
+<span class="font-meta-badge text-meta-badge bg-[#FFEDD5] text-[#C2410C] px-2 py-0.5 rounded font-tech-mono-sm font-semibold">T1046</span>
+</div>
+<div class="font-body-semibold text-body-semibold text-on-surface">Network Service Scanning</div>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+            Adversaries may scan systems to identify available services and potential attack paths across internal network boundaries.
+          </p>
+<a class="font-body-semibold text-caption text-primary hover:underline inline-flex items-center gap-1 pt-1" href="#">
+            View Technique Details
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<!-- Section 5: Contextual Action Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<h3 class="font-card-title text-card-title text-on-surface">Incident Response Controls</h3>
+<div class="space-y-space-xs">
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-on-surface font-body-semibold text-body-semibold rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">update</span>
+              Extend Block (+4h)
+            </button>
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-2 bg-surface-container-low hover:bg-[#FEE2E2] text-on-surface hover:text-[#B91C1C] font-body-semibold text-body-semibold rounded-lg transition-colors" onclick="showReleaseConfirmation()">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+              Release Block (Require Confirm)
+            </button>
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-2 bg-primary-container hover:bg-primary text-on-primary font-body-semibold text-body-semibold rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+              Mark Resolved &amp; Archive Case
+            </button>
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container-low text-secondary font-body-semibold text-body-semibold rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+              Export Investigation PDF / JSON
+            </button>
+</div>
+<!-- Subtle inline alert banner -->
+<div class="p-space-sm bg-surface-container-low rounded-lg text-secondary font-caption text-caption flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">security_update_good</span>
+<span>All remediation actions generate immutable audit signatures.</span>
+</div>
+</div>
+<!-- Section 6: Audit History -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-card-title text-card-title text-on-surface">Audit History</h3>
+<span class="font-meta-badge text-meta-badge text-secondary font-tech-mono-sm">IMMUTABLE LOG</span>
+</div>
+<div class="space-y-space-sm font-caption text-caption">
+<div class="space-y-0.5">
+<div class="flex justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">CyberGuard Policy Engine</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:07</span>
+</div>
+<p class="text-secondary">Temporary block rule AFW-9042 created deterministically.</p>
+</div>
+<div class="space-y-0.5">
+<div class="flex justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Verification Engine</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:32:25</span>
+</div>
+<p class="text-secondary">Containment cryptographically verified (0 packet leaks).</p>
+</div>
+<div class="space-y-0.5">
+<div class="flex justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">SOC Analyst (S. Chen)</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">14:35:10</span>
+</div>
+<p class="text-secondary">Incident claimed and telemetry review commenced.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script for tabs and mock dialog micro-interactions -->
+<script>
+    function switchEvidenceTab(tabId, element) {
+      // Hide all tabs
+      document.getElementById('tab-network').classList.add('hidden');
+      document.getElementById('tab-network').classList.remove('block');
+      document.getElementById('tab-behaviour').classList.add('hidden');
+      document.getElementById('tab-behaviour').classList.remove('block');
+      document.getElementById('tab-threat-intel').classList.add('hidden');
+      document.getElementById('tab-threat-intel').classList.remove('block');
+
+      // Reset button styles
+      const buttons = document.querySelectorAll('#evidence-tabs button');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        btn.classList.add('hover:text-on-surface');
+      });
+
+      // Activate clicked tab
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      document.getElementById('tab-' + tabId).classList.add('block');
+      element.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      element.classList.remove('hover:text-on-surface');
+    }
+
+    function showReleaseConfirmation() {
+      if (confirm("Confirm: Are you sure you want to release the containment block for 10.0.0.24 ahead of schedule? This will reopen network traffic to DMZ gateways.")) {
+        alert("Action canceled by security policy: Requires Lead Analyst secondary credential sign-off.");
+      }
+    }
+  </script>
+</div></main></div></body></html>

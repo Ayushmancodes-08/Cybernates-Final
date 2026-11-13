@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CYBERGUARD — Technical Architecture & Hackathon Demonstration</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 11pt;
+  }
+  h1 {
+    color: #0f172a;
+    font-size: 20pt;
+    font-weight: 800;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  h2 {
+    color: #1e293b;
+    font-size: 14pt;
+    font-weight: 700;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+  h3 {
+    color: #334155;
+    font-size: 12pt;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+  p, li {
+    color: #334155;
+  }
+  blockquote {
+    border-left: 4px solid #3b82f6;
+    background: #f8fafc;
+    margin: 12px 0;
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    color: #1e293b;
+    font-size: 10.5pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 7px 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    background: #f1f5f9;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    color: #0284c7;
+  }
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 9pt;
+    line-height: 1.45;
+    margin: 12px 0;
+    page-break-inside: avoid;
+  }
+  pre code {
+    background: transparent;
+    color: #f8fafc;
+    padding: 0;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+<h1 id="cyberguard-ai-powered-cyber-threat-phishing-digital-impersonation-defense-platform">CYBERGUARD — AI-Powered Cyber Threat, Phishing &amp; Digital Impersonation Defense Platform</h1>
+<p><a href="https://fastapi.tiangolo.com"><img alt="FastAPI" src="https://img.shields.io/badge/Backend-FastAPI%200.115+-009688?logo=fastapi&amp;logoColor=white" /></a>
+<a href="https://react.dev"><img alt="React" src="https://img.shields.io/badge/Frontend-React%2019%20%2B%20TypeScript-61DAFB?logo=react&amp;logoColor=black" /></a>
+<a href="https://tailwindcss.com"><img alt="TailwindCSS" src="https://img.shields.io/badge/Design_System-Calm_Enterprise_Security-38B2AC?logo=tailwindcss&amp;logoColor=white" /></a>
+<a href="https://huggingface.co/Qwen"><img alt="Qwen 2.5" src="https://img.shields.io/badge/AI_Analyst-Qwen%202.5--3B%2F7B-FF6F00?logo=huggingface&amp;logoColor=white" /></a>
+<a href="#"><img alt="Status" src="https://img.shields.io/badge/SOC_Posture-Nominal_92%25-10B981" /></a></p>
+<blockquote>
+<p><strong>Built for the Odisha Knowledge Corporation Limited (OKCL) Hackathon — Problem Statement 9:</strong>
+<em>"CYBERGUARD - AI Powered Cyber Threat, Phishing &amp; Digital Impersonation Detection and Response System"</em></p>
+</blockquote>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-executive-overview--problem-statement">Executive Overview &amp; Problem Statement</a></li>
+<li><a href="#2-core-architectural-principle">Core Architectural Principle</a></li>
+<li><a href="#3-multi-model-ai-subsystem-architecture">Multi-Model AI Subsystem Architecture</a></li>
+<li><a href="#4-ai-processing--feature-extraction-pipeline">AI Processing &amp; Feature Extraction Pipeline</a></li>
+<li><a href="#5-end-to-end-api-reference--frontend-bindings">End-to-End API Reference &amp; Frontend Bindings</a></li>
+<li><a href="#6-real-time-websocket-telemetry--kernel-verification">Real-Time WebSocket Telemetry &amp; Kernel Verification</a></li>
+<li><a href="#7-cyber-attack-knowledge-graph--gnn-topology">Cyber Attack Knowledge Graph &amp; GNN Topology</a></li>
+<li><a href="#8-quickstart-local-installation--execution">Quickstart: Local Installation &amp; Execution</a></li>
+<li><a href="#9-hackathon-judge-demonstration-runbook">Hackathon Judge Demonstration Runbook</a></li>
+</ol>
+<hr />
+<h2 id="1-executive-overview-problem-statement">1. Executive Overview &amp; Problem Statement</h2>
+<p>Modern state and educational infrastructures face attacks that target two distinct planes:
+- <strong>The Technology Layer:</strong> Port sweeps, SYN floods, credential stuffing, SSH password spraying, API abuse.
+- <strong>The Human Layer:</strong> Spoofed SMS notifications (Smishing), spear-phishing emails (BEC), QR payment traps (Quishing), cloned executive voices (Voice Deepfakes), and synthetic keynote video manipulation.</p>
+<p>Traditional firewalls only monitor network packets, remaining blind to human-targeted multimodal deception. <strong>CyberGuard</strong> bridges this gap by unifying network telemetry with computer vision, acoustic spectral processing, graph analytics, and explainable generative AI into a single autonomous Security Operations Center (SOC) platform.</p>
+<hr />
+<h2 id="2-core-architectural-principle">2. Core Architectural Principle</h2>
+<pre><code>                    AI ADVISES  ───►  DETERMINISTIC POLICY ENFORCES
+</code></pre>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>Why we do NOT allow Large Language Models to directly execute firewall commands:</strong>
+LLMs are probabilistic, prone to hallucinations, and vulnerable to prompt injection. In CyberGuard:
+1. <strong>AI Models (KNN, CNN, Transformers, GNN, Qwen 2.5)</strong> inspect, classify, score, correlate, and explain threats.
+2. <strong>Deterministic Policy Engine</strong> evaluates mathematical risk thresholds, verifies constraints, synthesizes temporary <code>nftables</code> rules with TTL expiration, and verifies kernel-level Netlink receipts.</p>
+</blockquote>
+<hr />
+<h2 id="3-multi-model-ai-subsystem-architecture">3. Multi-Model AI Subsystem Architecture</h2>
+<p>A single neural network cannot solve text, audio, images, and network packets simultaneously. CyberGuard uses a <strong>Hierarchical Multi-Model AI Ensemble</strong>:</p>
+<pre><code>                  ┌──────────────────────────────────────────────┐
+                  │          MULTI-SOURCE INGESTION              │
+                  │  (SMS, Email, QR Images, Voice, Video, DPI)  │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+        ┌───────────────────┬────────────┴───────────┬───────────────────┐
+        ▼                   ▼                        ▼                   ▼
+ ┌──────────────┐   ┌──────────────┐         ┌──────────────┐    ┌───────────────┐
+ │Tabular/Flows │   │  NLP / Text  │         │ Audio/Vision │    │ Graph Entity  │
+ │(Network/Auth)│   │ (SMS / Email)│         │(Spectra/Seam)│    │(Topology/Link)│
+ ├──────────────┤   ├──────────────┤         ├──────────────┤    ├───────────────┤
+ │ KNN / XGBoost│   │ RoBERTa / De-│         │ CNN ResNet50 │    │ PyG / RGAT    │
+ │IsolationForest   │ BERTa-Cyber  │         │ + RawNet2    │    │ Graph Network │
+ ├──────────────┤   ├──────────────┤         ├──────────────┤    ├───────────────┤
+ │ Explainability:  │Explainability:         │Explainability:    │Explainability:│
+ │ TreeSHAP /   │   │ LIME / Token │         │ Grad-CAM Heat-│   │ Subgraph Path │
+ │ Distance Pct │   │ Attribution  │         │ map Saliency │    │ / Louvain Com.│
+ └──────┬───────┘   └──────┬───────┘         └──────┬───────┘    └───────┬───────┘
+        │                  │                        │                    │
+        └──────────────────┼────────────────────────┴────────────────────┘
+                           ▼
+        ┌───────────────────────────────────────────────────────────┐
+        │   QWEN 2.5-3B/7B-INSTRUCT CONTEXTUAL REASONING COPILOT    │
+        │      Fuses evidence vectors -&gt; Plain-Language XAI         │
+        └──────────────────────────┬────────────────────────────────┘
+                                   ▼
+        ┌───────────────────────────────────────────────────────────┐
+        │       DETERMINISTIC POLICY ENGINE &amp; NFTABLES DROP         │
+        └───────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="specialized-model-breakdown">Specialized Model Breakdown:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model Architecture</th>
+<th style="text-align: left;">Targeted Threat Vector</th>
+<th style="text-align: left;">Input Features</th>
+<th style="text-align: left;">Explainability Engine (XAI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>KNN &amp; Isolation Forest</strong></td>
+<td style="text-align: left;">Network bursts &amp; Geo-Velocity Impossible Travel</td>
+<td style="text-align: left;">Flow inter-arrival rates, SYN/ACK ratios, $(\Delta \text{distance}, \Delta \text{time})$</td>
+<td style="text-align: left;">Euclidean $\sigma$-distance from authentic centroid clusters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spectral CNN (RawNet2)</strong></td>
+<td style="text-align: left;">Audio / Voice Deepfakes</td>
+<td style="text-align: left;">128-band Mel-Spectrograms, Constant-Q Transforms</td>
+<td style="text-align: left;">Vocoder roll-off ($&gt;8.1\text{ kHz}$) &amp; F0 pitch contour flatlines</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ResNet50 / ViT (CNN)</strong></td>
+<td style="text-align: left;">Image Quishing &amp; Video Facial Seam Deepfakes</td>
+<td style="text-align: left;">224x224 RGB crops &amp; DCT frequency transforms</td>
+<td style="text-align: left;">Grad-CAM saliency heatmaps highlighting tampered facial boundaries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fine-Tuned RoBERTa</strong></td>
+<td style="text-align: left;">SMS Smishing &amp; Phishing Emails</td>
+<td style="text-align: left;">Token sequences, Telecom DLT header metadata</td>
+<td style="text-align: left;">Attention attribution highlighting psychological urgency tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Heterogeneous GNN (PyG)</strong></td>
+<td style="text-align: left;">Multi-Hop Attack Infrastructure &amp; Lateral Movement</td>
+<td style="text-align: left;">Node embeddings (Actor, Domain, IP, SMS, Victim)</td>
+<td style="text-align: left;">GNNExplainer identifying minimum connected threat subgraphs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Qwen 2.5-3B/7B-Instruct</strong></td>
+<td style="text-align: left;">Incident Synthesis &amp; Human-in-the-Loop Co-pilot</td>
+<td style="text-align: left;">Consolidated multi-modal telemetry + Suricata logs</td>
+<td style="text-align: left;">Evidence-grounded natural language justifications + MITRE mapping</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-ai-processing-feature-extraction-pipeline">4. AI Processing &amp; Feature Extraction Pipeline</h2>
+<h3 id="a-sms-smishing-pipeline-backendmainpy">A. SMS &amp; Smishing Pipeline (<code>backend/main.py</code>)</h3>
+<ol>
+<li><strong>Telecom DLT Header Verification:</strong> Checks sender ID against the official telecom regulatory registry (flags unauthorized headers such as <code>OKCL-GOV</code>, <code>OKCL-STUDENT</code>).</li>
+<li><strong>Urgency &amp; Coercion NLP Classifier:</strong> Scores psychological pressure phrases (<em>"within 2 hours"</em>, <em>"immediate de-registration"</em>, <em>"bank KYC"</em>).</li>
+<li><strong>URL Evasion Extraction:</strong> Extracts embedded shortlinks and measures Shannon entropy.</li>
+</ol>
+<h3 id="b-image-qr-quishing-pipeline-componentsmultimodalqrcodeinspectortsx">B. Image &amp; QR Quishing Pipeline (<code>components/multimodal/QRCodeInspector.tsx</code>)</h3>
+<ol>
+<li><strong>Matrix Decoding:</strong> Decodes concealed QR barcode payloads using OpenCV / pyzbar.</li>
+<li><strong>Computer Vision OCR:</strong> Tesseract OCR extracts surrounding notice text from promotional posters.</li>
+<li><strong>Destination Reputation:</strong> Analyzes domain age (e.g. registered 3 days ago), free Let's Encrypt SSL certificates, and typosquatting.</li>
+</ol>
+<h3 id="c-audio-voice-deepfake-pipeline-componentsmultimodalaudiowaveformvisualizertsx">C. Audio &amp; Voice Deepfake Pipeline (<code>components/multimodal/AudioWaveformVisualizer.tsx</code>)</h3>
+<ol>
+<li><strong>Acoustic Spectrogram Transform:</strong> Audio converted to 128-band Log-Mel Spectrogram.</li>
+<li><strong>Neural Vocoder Detection:</strong> Detects sharp high-frequency roll-off above $8,150\text{ Hz}$ typical of HiFi-GAN and DiffWave synthesizers.</li>
+<li><strong>Prosody Variance ($F_0$):</strong> Measures pitch inflection; cloned voices exhibit robotic flatlines ($\sigma &lt; 5\text{ Hz}$).</li>
+<li><strong>Biometric Distance:</strong> Cosine distance comparison against enrolled executive voice embeddings.</li>
+</ol>
+<h3 id="d-video-deepfake-pipeline-componentsmultimodalvideoframeanalyzertsx">D. Video Deepfake Pipeline (<code>components/multimodal/VideoFrameAnalyzer.tsx</code>)</h3>
+<ol>
+<li><strong>Facial Seam Extraction:</strong> Evaluates 120 timeline frames for Gaussian boundary artifacts around the jawline.</li>
+<li><strong>Blinking Rate Frequency:</strong> Flags abnormal eye-aspect ratio rates (e.g., 1.2 blinks/min vs. natural human 14 blinks/min).</li>
+<li><strong>Phoneme-to-Viseme Synchronization:</strong> Flags temporal phase lag between spoken audio and lip movements.</li>
+</ol>
+<hr />
+<h2 id="5-end-to-end-api-reference-frontend-bindings">5. End-to-End API Reference &amp; Frontend Bindings</h2>
+<p>All endpoints are hosted on <code>http://127.0.0.1:8000/api/v1</code> and consumed by <code>frontend/src/services/api.ts</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: center;">Method</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frontend Component / Page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/auth/login</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Authenticate with Argon2id &amp; return JWT pair</td>
+<td style="text-align: left;"><code>LoginPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/auth/logout</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Revoke active refresh token</td>
+<td style="text-align: left;"><code>Topbar.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/me</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Current user profile, role, tenant</td>
+<td style="text-align: left;"><code>AuthContext.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/dashboard/summary</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Posture score, metrics, vector breakdown</td>
+<td style="text-align: left;"><code>OverviewPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/threats/live</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Ingress threats stream with Suricata alerts</td>
+<td style="text-align: left;"><code>LiveThreatsPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/threats/block</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">1-Click manual IP block</td>
+<td style="text-align: left;"><code>LiveThreatsPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/firewall/rules</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Active nftables rules inventory with drop counters</td>
+<td style="text-align: left;"><code>AdaptiveFirewallPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/firewall/toggle</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Enable / Disable specific firewall rule</td>
+<td style="text-align: left;"><code>AdaptiveFirewallPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/multimodal/records</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Ingested SMS, Email, QR, Voice, Video records</td>
+<td style="text-align: left;"><code>MultimodalThreatLabPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/multimodal/analyze</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Run AI forensic scan on uploaded content</td>
+<td style="text-align: left;"><code>MultimodalThreatLabPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/graph/topology</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Heterogeneous attack graph nodes and edges</td>
+<td style="text-align: left;"><code>GraphIntelligencePage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/ai/chat</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Evidence-grounded Qwen 2.5 security co-pilot</td>
+<td style="text-align: left;"><code>AIAnalystPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/simulator/scenarios</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Runnable attack scenarios</td>
+<td style="text-align: left;"><code>SimulatorPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/simulator/run</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Execute attack simulation in safe sandbox</td>
+<td style="text-align: left;"><code>SimulatorPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/responses</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Netlink verified response receipts</td>
+<td style="text-align: left;"><code>ResponseCenterPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/responses/execute</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Execute manual mitigation receipt</td>
+<td style="text-align: left;"><code>ResponseCenterPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/network/telemetry</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Deep Packet Inspection (DPI) flow rates</td>
+<td style="text-align: left;"><code>NetworkIntelligencePage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/identity/users</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">User identity risk scores and locations</td>
+<td style="text-align: left;"><code>IdentitySecurityPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/identity/revoke-session</code></td>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: left;">Terminate session for compromised user</td>
+<td style="text-align: left;"><code>IdentitySecurityPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/settings</code></td>
+<td style="text-align: center;"><code>GET/PATCH</code></td>
+<td style="text-align: left;">Policy thresholds, auto-mitigation toggles</td>
+<td style="text-align: left;"><code>SettingsPage.tsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/health/detailed</code></td>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: left;">Subsystem latency and readiness probes</td>
+<td style="text-align: left;"><code>SystemHealthPage.tsx</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-real-time-websocket-telemetry-kernel-verification">6. Real-Time WebSocket Telemetry &amp; Kernel Verification</h2>
+<h3 id="websocket-subscription">WebSocket Subscription</h3>
+<p>The frontend subscribes to real-time events via <code>ws://127.0.0.1:8000/api/v1/ws</code>:</p>
+<pre><code class="language-json">{
+  &quot;event&quot;: &quot;SIMULATOR_SCENARIO_RUN&quot;,
+  &quot;scenario&quot;: &quot;sim-port-scan&quot;,
+  &quot;threat_id&quot;: &quot;THR-SIM-12&quot;,
+  &quot;rule_id&quot;: &quot;FW-RULE-9041&quot;,
+  &quot;status&quot;: &quot;APPLIED_VERIFIED&quot;,
+  &quot;timestamp&quot;: &quot;2026-09-19T14:40:00Z&quot;
+}
+</code></pre>
+<h3 id="netlink-kernel-verification-receipts">Netlink Kernel Verification Receipts</h3>
+<p>Every mitigation action (such as dropping an IP or revoking a token) produces an immutable verification receipt:</p>
+<pre><code class="language-json">{
+  &quot;action&quot;: &quot;NFTABLES_DROP_IP&quot;,
+  &quot;target&quot;: &quot;185.220.101.42&quot;,
+  &quot;status&quot;: &quot;APPLIED_VERIFIED&quot;,
+  &quot;verification_socket&quot;: &quot;Linux Kernel Netlink AF_NETLINK&quot;,
+  &quot;packets_dropped&quot;: 14280,
+  &quot;bypass_count&quot;: 0
+}
+</code></pre>
+<hr />
+<h2 id="7-cyber-attack-knowledge-graph-gnn-topology">7. Cyber Attack Knowledge Graph &amp; GNN Topology</h2>
+<p>CyberGuard models attack campaigns as heterogeneous graphs to uncover multi-hop attacker infrastructure:</p>
+<pre><code>[Threat Actor: Storm-0501]
+       │
+       ├──(ACQUIRED_SPOOF)──&gt; [DLT Header: OKCL-GOV] ──(TRANSMITS)──&gt; [SMS: Scholarship KYC Scam]
+       │                                                                      │
+       │                                                               (CONTAINS_LINK)
+       │                                                                      ▼
+[MITRE T1566: Phishing]                                       [Domain: okcl-scholarship.portal-claim.online]
+                                                                              │
+                                                                       (RESOLVES_DNS_A)
+                                                                              ▼
+[Victim: deepak.mohanty] ──(IMPOSSIBLE_TRAVEL_SESSION)───────&gt; [IP: 103.212.45.19 (Frankfurt AS24940)]
+                                                                              ▲
+                                                                              │
+                                                                   (ENFORCES_NFTABLES_DROP)
+                                                                              │
+                                                                 [Adaptive FW: FW-RULE-DROP-9041]
+</code></pre>
+<p>Accessible via the interactive canvas in <strong><code>Intelligence &gt; Attack Graph (GNN)</code></strong> (<a href="file:///a:/Cybernates/frontend/src/components/graph/AttackGraphExplorer.tsx"><code>AttackGraphExplorer.tsx</code></a>).</p>
+<hr />
+<h2 id="8-quickstart-local-installation-execution">8. Quickstart: Local Installation &amp; Execution</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Python 3.11+</li>
+<li>Node.js 20+ and <code>npm</code></li>
+<li>Windows, Linux, or macOS</li>
+</ul>
+<h3 id="1-backend-setup">1. Backend Setup</h3>
+<pre><code class="language-bash"># Navigate to backend
+cd a:/Cybernates/backend
+
+# Install dependencies
+pip install fastapi uvicorn pydantic python-jose argon2-cffi requests
+
+# Launch backend daemon
+python -m uvicorn main:app --host 127.0.0.1 --port 8000
+</code></pre>
+<p>Backend API Docs will be available at: <code>http://127.0.0.1:8000/docs</code>.</p>
+<h3 id="2-frontend-setup">2. Frontend Setup</h3>
+<pre><code class="language-bash"># Navigate to frontend
+cd a:/Cybernates/frontend
+
+# Install dependencies
+npm install
+
+# Start Vite dev server
+npm run dev -- --host 127.0.0.1 --port 5173
+</code></pre>
+<p>Frontend UI will be live at: <code>http://127.0.0.1:5173/</code>.</p>
+<h3 id="3-default-admin-credentials">3. Default Admin Credentials</h3>
+<ul>
+<li><strong>Email:</strong> <code>elena.vance@cyberguard.internal</code></li>
+<li><strong>Role:</strong> Administrator (Full SOC Clearance)</li>
+<li><strong>Tenant:</strong> OKCL Core Infrastructure</li>
+<li><em>Quick-Login:</em> Click the <strong>Elena Vance</strong> card on the login window to autofill.</li>
+</ul>
+<hr />
+<h2 id="9-hackathon-judge-demonstration-runbook">9. Hackathon Judge Demonstration Runbook</h2>
+<p>Follow this exact 5-minute sequence when presenting to the judges:</p>
+<ol>
+<li><strong>Overview Dashboard (<code>/overview</code>):</strong></li>
+<li>Show the <strong>92% Nominal SOC Posture</strong>.</li>
+<li>Point out the <strong>Multi-Source Threat &amp; Impersonation Engine</strong> launcher banner.</li>
+<li><strong>Multimodal &amp; Deepfake Threat Lab (<code>/multimodal</code>):</strong></li>
+<li><strong>SMS / Smishing:</strong> Run analysis on fake OKCL scholarship grant with spoofed DLT header <code>OKCL-STUDENT</code>. Show the 96% risk score and explainable AI breakdown.</li>
+<li><strong>QR Quishing:</strong> Show decoded URL payload <code>okcl-scholarship.portal-claim.online</code> and OCR notice extraction.</li>
+<li><strong>Voice Deepfake:</strong> Play the Managing Director voice memo. Point to the <strong>8,150 Hz vocoder cutoff</strong> and robotic flat pitch line.</li>
+<li><strong>Video Deepfake:</strong> Scrub the 120-frame timeline. Point to the purple <strong>facial seam heatmap</strong> around the jawline.</li>
+<li><strong>Impersonation Matrix:</strong> Show side-by-side verification: Verified Official (<code>okcl.org</code>) vs. Detected Imposter.</li>
+<li><strong>Attack Graph &amp; GNN (<code>/graph-intelligence</code>):</strong></li>
+<li>Show multi-hop correlation: Actor $\rightarrow$ Spoofed Header $\rightarrow$ SMS $\rightarrow$ Phishing Domain $\rightarrow$ IP $\rightarrow$ Victim Session $\rightarrow$ Firewall Rule.</li>
+<li>Switch to <strong>Multi-Model Training Specs</strong> tab to show KNN, CNN, GNN, and Qwen LoRA mathematical formulas.</li>
+<li><strong>Attack Simulator Sandbox (<code>/simulator</code>):</strong></li>
+<li>Run <strong>Scenario 1: Distributed TCP Port Sweep</strong> or <strong>Scenario 5: Audio Deepfake CEO Fraud</strong>.</li>
+<li>Watch live terminal execution and automatic <code>nftables</code> rule synthesis.</li>
+<li><strong>Adaptive Firewall (<code>/firewall</code>):</strong></li>
+<li>Inspect the newly synthesized drop rule with its 60-minute TTL countdown timer and Netlink kernel verification receipt.</li>
+</ol>
+</body>
+</html>
