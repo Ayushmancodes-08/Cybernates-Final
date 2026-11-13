@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "primary-fixed": "#dbe1ff", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "surface": "#f8f9ff", "surface-bright": "#f8f9ff", "secondary-container": "#d7dff9", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "error-container": "#ffdad6", "primary-container": "#2563eb", "inverse-primary": "#b4c5ff", "surface-tint": "#0053db", "inverse-on-surface": "#eaf1ff", "tertiary": "#005d73", "on-secondary-container": "#5a6278", "secondary": "#555e74", "tertiary-container": "#007793", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#001f28", "on-primary-fixed-variant": "#003ea8", "on-primary-fixed": "#00174b", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004e61", "inverse-surface": "#213145", "tertiary-fixed-dim": "#6cd3f7", "outline-variant": "#c3c6d7", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#3e475b", "on-surface-variant": "#434655", "outline": "#737686", "on-secondary-fixed": "#121b2e", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-fixed": "#d9e2fc", "primary": "#004ac6", "on-tertiary-container": "#dcf4ff", "on-error-container": "#93000a", "on-primary-container": "#eeefff", "secondary-fixed-dim": "#bdc6e0", "on-background": "#0b1c30", "background": "#f8f9ff", "tertiary-fixed": "#b7eaff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-lg": "2rem", "margin-sm": "1rem", "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem" }, "fontFamily": { "tech-mono-sm": ["JetBrains Mono"], "card-title": ["Inter"], "section-title-mobile": ["Inter"], "tech-mono-base": ["JetBrains Mono"], "display-title": ["Inter"], "display-title-mobile": ["Inter"], "body-regular": ["Inter"], "section-title": ["Inter"], "meta-badge": ["Inter"], "caption": ["Inter"], "body-semibold": ["Inter"] }, "fontSize": { "tech-mono-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "card-title": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "section-title-mobile": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tech-mono-base": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "display-title": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-title-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-regular": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "section-title": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "meta-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-semibold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-regular text-body-regular text-on-surface antialiased"><aside class="fixed inset-y-0 left-0 z-50 w-64 bg-inverse-surface flex flex-col transition-transform duration-200 ease-in-out -translate-x-full lg:translate-x-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" id="app-sidebar"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-inverse-surface/80 shrink-0"><img alt="CyberGuard Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W0LlZVr67H8U73st9v8uu31MpGifyWtIqGXvkSnVeDV7k9QtYEEICK9jRhPEL4anr5LRlqjJGAsh2I5SVx2XJ11FxdmQBRKNJD3kQbTeJDV40ZS_lRVDlm8XEgvzwmugshSu7o9znWcPkeAY3zqIazxXBRpmKzOos2lfWqZrGIPgLE2REgPuXACB7d8zlJmoJ1HGUfjAM7aY5DrkjRyK4HUYAknTiIn3f9O7YN7iDenc3zst2iMi6bRHM"/><div class="flex flex-col min-w-0"><span class="font-card-title text-card-title text-inverse-on-surface tracking-tight truncate">CyberGuard</span><span class="font-meta-badge text-meta-badge text-outline-variant uppercase tracking-wider truncate">Adaptive Security Platform</span></div><button class="lg:hidden ml-auto p-space-xs text-outline-variant hover:text-inverse-on-surface hover:bg-surface-variant/10 rounded-lg" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-lg space-y-space-xl"><nav class="space-y-space-xl" data-active-classes="bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]"><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Overview</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="overview" href="#">Overview</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Security</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="live-threats" href="#">Live Threats</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="incidents" href="#">Incidents</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="adaptive-firewall" href="#">Adaptive Firewall</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Intelligence</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="network" href="#">Network</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="identity" href="#">Identity</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="phishing" href="#">Phishing</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="ai-analyst" href="#">AI Analyst</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="threat-intelligence" href="#">Threat Intelligence</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Operations</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="response-center" href="#">Response Center</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="simulator" href="#">Simulator</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">System</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="system-health" href="#">System Health</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="settings" href="#">Settings</a></div></div></nav></div><div class="p-space-md bg-inverse-surface/90 shrink-0"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">ENGINE v4.19</span></div><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">SOC-01</span></div></div></aside><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-40 hidden" id="sidebar-backdrop" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"></div><div class="lg:pl-64 flex flex-col min-h-screen"><header class="fixed top-0 right-0 left-0 lg:left-64 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-1"><button class="lg:hidden p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg" onclick="document.getElementById('app-sidebar').classList.remove('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">menu</span></button><div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-caption text-caption"><a class="hover:text-on-surface text-outline-variant transition-colors" data-path="overview" href="#">CyberGuard</a><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-outline-variant">Security</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-body-semibold text-caption font-semibold">Adaptive Firewall</span></div><div class="relative flex-1 max-w-[560px] mx-space-sm"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 bg-surface-container-low text-on-surface placeholder:text-outline text-caption font-body-regular rounded-lg border-0 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search IP, user, device, domain or incident..." type="text"/><kbd class="hidden md:inline-flex absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 bg-surface-container-lowest rounded text-[10px] font-tech-mono-sm text-outline font-semibold shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-outline-variant/30 text-on-surface rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-meta-badge text-meta-badge uppercase tracking-wider font-semibold text-on-surface">NORMAL</span></div><button class="hidden md:inline-flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors border-0"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-caption text-caption font-semibold">All systems operational</span><span class="material-symbols-outlined text-[16px] text-outline">keyboard_arrow_down</span></button><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCT6jP7jRCOx_dsTZ09HouyLkgiW_bDnFeYdm_fUS0qAJyAOeZuYsTrpg-vIYIxAuHlgBDWtEJp7Bn4xtu7nzOfEf09Nwi-ZeWf3XWKdIYMYP9_I--a4ZaNdfXfy6A1Z9QS4XJ8epVRQYhXSiuMkTtQuLDGDuDJuno5_KtNnih4-UCYCMul_5ZwPvzZIU-glZVKQTjUKHih2Fd69scTkVHqtvUgWpE0ipQkOXyaf-gJSBOYKBD0EYUqQ"/><div class="hidden 2xl:flex flex-col text-left"><span class="font-body-semibold text-caption text-on-surface truncate leading-tight">Elena Vance</span><span class="font-meta-badge text-meta-badge text-outline truncate">Lead Security Analyst</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Script for Sidebar Active State & Dynamic Panel Interactivity -->
+<script>
+    (function() {
+      // Set active sidebar navigation state for 'identity'
+      const navLinks = document.querySelectorAll('#app-sidebar nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'identity') {
+          link.className = 'flex items-center px-space-md py-space-sm rounded-lg bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px] transition-colors font-body-regular text-body-regular truncate';
+        } else {
+          link.classList.remove('bg-[#263552]', 'text-on-primary', 'font-body-semibold', 'border-l-[3px]', 'border-primary-container', 'pl-[13px]');
+          if (!link.classList.contains('text-outline-variant')) {
+            link.classList.add('text-outline-variant');
+          }
+        }
+      });
+    })();
+
+    function selectUser(userKey) {
+      const rows = document.querySelectorAll('.user-table-row');
+      rows.forEach(r => {
+        r.classList.remove('bg-surface-container-high', 'border-l-[3px]', 'border-primary-container');
+        r.classList.add('hover:bg-surface-container-low');
+      });
+      const activeRow = document.getElementById('row-' + userKey);
+      if (activeRow) {
+        activeRow.classList.remove('hover:bg-surface-container-low');
+        activeRow.classList.add('bg-surface-container-high', 'border-l-[3px]', 'border-primary-container');
+      }
+    }
+  </script>
+<!-- 1. SUB-HEADER / CONTEXT STRIP -->
+<div class="w-full bg-surface-container-lowest px-space-lg py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-md min-w-0">
+<!-- Breadcrumb Context -->
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span class="text-outline">CyberGuard</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-outline">Intelligence</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-body-semibold">Identity Security</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/30 hidden sm:block"></div>
+<!-- Realtime Telemetry Status Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 bg-surface-container-low rounded-full">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-on-surface tracking-tight">Identity telemetry operational</span>
+</div>
+</div>
+<!-- Controls & Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs px-space-md py-1 bg-surface-container-low rounded-lg text-on-surface text-caption font-body-regular cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>Last 24 hours</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<button class="p-space-xs bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors flex items-center justify-center" title="Refresh Identity Telemetry">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-container-low hover:bg-surface-container text-on-surface font-caption text-caption font-semibold rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">tune</span>
+<span>Identity Settings</span>
+</button>
+</div>
+</div>
+<!-- MAIN SCROLLABLE DASHBOARD VIEWPORT -->
+<div class="p-space-lg space-y-space-lg w-full max-w-[1680px] mx-auto">
+<!-- 2. SUMMARY METRIC CARDS (6 compact cards) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-md">
+<!-- Users Monitored -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider">Users Monitored</span>
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-on-surface leading-none">842</div>
+<p class="font-caption text-caption text-outline mt-1 truncate">Directory &amp; IdP sync active</p>
+</div>
+</div>
+<!-- High-Risk Users -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-error">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-error">High-Risk Users</span>
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-error leading-none">4</div>
+<p class="font-caption text-caption text-error mt-1 truncate font-medium">1 Critical • 3 High severity</p>
+</div>
+</div>
+<!-- Auth Anomalies -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider">Auth Anomalies</span>
+<span class="material-symbols-outlined text-[18px]">security_update_warning</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-on-surface leading-none">17</div>
+<p class="font-caption text-caption text-outline mt-1 truncate">Geo-velocity &amp; token skew</p>
+</div>
+</div>
+<!-- Failed Login Spikes -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider">Failed Spikes</span>
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-on-surface leading-none">8</div>
+<p class="font-caption text-caption text-outline mt-1 truncate">Bursts &gt; 5 attempts in 60s</p>
+</div>
+</div>
+<!-- New Devices -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider">New Devices</span>
+<span class="material-symbols-outlined text-[18px]">devices</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-on-surface leading-none">13</div>
+<p class="font-caption text-caption text-outline mt-1 truncate">First-seen endpoint tokens</p>
+</div>
+</div>
+<!-- Sessions Challenged -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider">Sessions Challenged</span>
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-display-title text-display-title text-on-surface leading-none">21</div>
+<p class="font-caption text-caption text-outline mt-1 truncate">Step-up MFA / Revoked</p>
+</div>
+</div>
+</div>
+<!-- 3. IDENTITY RISK OVERVIEW STRIP -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">pie_chart</span>
+<h2 class="font-card-title text-card-title text-on-surface">Identity Risk Distribution</h2>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">Total active directory identities: 842</span>
+</div>
+<!-- Continuous Risk Distribution Visual Bar -->
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex shadow-inner">
+<div class="h-full bg-slate-300 transition-all duration-500" style="width: 96.44%;" title="Low Risk: 812 users (96.4%)"></div>
+<div class="h-full bg-amber-400 transition-all duration-500" style="width: 3.09%;" title="Medium Risk: 26 users (3.1%)"></div>
+<div class="h-full bg-orange-500 transition-all duration-500" style="width: 0.36%;" title="High Risk: 3 users (0.4%)"></div>
+<div class="h-full bg-error transition-all duration-500" style="width: 0.12%; min-width: 6px;" title="Critical Risk: 1 user (0.1%)"></div>
+</div>
+<!-- Segment Legend and Threshold Calibration -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs text-caption font-caption">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-300 shrink-0"></span>
+<div class="truncate">
+<span class="font-body-semibold text-on-surface">Low (0-39):</span>
+<span class="font-tech-mono-sm text-outline ml-1">812 (96.4%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 shrink-0"></span>
+<div class="truncate">
+<span class="font-body-semibold text-on-surface">Medium (40-69):</span>
+<span class="font-tech-mono-sm text-outline ml-1">26 (3.1%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-500 shrink-0"></span>
+<div class="truncate">
+<span class="font-body-semibold text-on-surface">High (70-84):</span>
+<span class="font-tech-mono-sm text-outline ml-1">3 (0.4%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-error shrink-0"></span>
+<div class="truncate">
+<span class="font-body-semibold text-on-surface">Critical (85-100):</span>
+<span class="font-tech-mono-sm text-outline ml-1">1 (0.1%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. MAIN WORKSPACE - TWO-COLUMN INVESTIGATION LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Identity Attention Matrix & Correlation Feeds (approx 62% ~ 7.5 cols => 7 cols on lg, 8 on xl) -->
+<div class="lg:col-span-7 xl:col-span-7 space-y-space-lg">
+<!-- User Attention Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Table Header & Toolbar -->
+<div class="p-space-md bg-surface-container-low/50 space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">crisis_alert</span>
+<h3 class="font-card-title text-card-title text-on-surface">Users Requiring Attention</h3>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-tech-mono-sm text-tech-mono-sm">5 Flagged</span>
+</div>
+<button class="font-caption text-caption text-primary hover:underline flex items-center gap-1 font-semibold">
+<span>Export Telemetry</span>
+<span class="material-symbols-outlined text-[14px]">file_download</span>
+</button>
+</div>
+<!-- Filter Controls Matrix -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Quick Text Filter -->
+<div class="relative flex-1 min-w-[180px]">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline">search</span>
+<input class="w-full h-8 pl-8 pr-3 text-caption font-body-regular bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" placeholder="Filter identity, anomaly, IP..." type="text"/>
+</div>
+<!-- Risk Dropdown -->
+<select class="h-8 px-2 bg-surface-container-lowest text-on-surface text-caption font-body-regular rounded-lg focus:outline-none shadow-xs cursor-pointer">
+<option>Risk: All</option>
+<option>Critical</option>
+<option>High</option>
+<option>Medium</option>
+</select>
+<!-- Status Dropdown -->
+<select class="h-8 px-2 bg-surface-container-lowest text-on-surface text-caption font-body-regular rounded-lg focus:outline-none shadow-xs cursor-pointer">
+<option>Status: All</option>
+<option>Contained</option>
+<option>Monitoring</option>
+<option>Challenged</option>
+<option>Resolved</option>
+</select>
+<!-- Anomaly Dropdown -->
+<select class="h-8 px-2 bg-surface-container-lowest text-on-surface text-caption font-body-regular rounded-lg focus:outline-none shadow-xs cursor-pointer hidden sm:block">
+<option>Anomaly: All</option>
+<option>Account Takeover</option>
+<option>New Device</option>
+<option>New Location</option>
+<option>Unusual Time</option>
+<option>Impossible Travel</option>
+</select>
+<!-- Auth Type -->
+<select class="h-8 px-2 bg-surface-container-lowest text-on-surface text-caption font-body-regular rounded-lg focus:outline-none shadow-xs cursor-pointer hidden xl:block">
+<option>Auth: All</option>
+<option>Password</option>
+<option>MFA</option>
+<option>SSO</option>
+<option>Token</option>
+</select>
+<button class="h-8 px-2 bg-surface-container-lowest hover:bg-surface-container text-outline text-caption rounded-lg transition-colors flex items-center justify-center" title="Clear filters">
+<span class="material-symbols-outlined text-[16px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Tabular List -->
+<div class="overflow-x-auto">
+<div class="min-w-[620px]">
+<!-- Row 1: student01 (ACTIVE / SELECTED) -->
+<div class="user-table-row p-space-md bg-surface-container-high border-l-[3px] border-primary-container cursor-pointer transition-colors space-y-space-xs shadow-xs" id="row-student01" onclick="selectUser('student01')">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-error-container text-error font-semibold shrink-0">CRITICAL</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold truncate">student01</span>
+<span class="text-caption font-caption text-outline truncate">(student01@example.edu) • Computer Science</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-error text-on-error font-bold">94 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-meta-badge text-meta-badge uppercase tracking-wider flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">lock</span> CONTAINED
+                    </span>
+</div>
+</div>
+<div class="text-body-regular font-body-regular text-on-surface text-sm">
+<span class="font-body-semibold text-error">Primary Anomaly:</span> Account takeover indicators (impossible travel + token reuse)
+                </div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">laptop_chromebook</span> Device-21 (Ubuntu)
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">lan</span> 192.168.1.42 (VPN Gateway)
+                    </span>
+<span class="text-error font-medium">12 failed logins / 90s</span>
+</div>
+<span class="font-caption text-caption text-outline">8 min ago</span>
+</div>
+</div>
+<!-- Row 2: faculty02 -->
+<div class="user-table-row p-space-md hover:bg-surface-container-low cursor-pointer transition-colors space-y-space-xs bg-surface-container-lowest" id="row-faculty02" onclick="selectUser('faculty02')">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-orange-100 text-orange-800 font-semibold shrink-0">HIGH</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold truncate">faculty02</span>
+<span class="text-caption font-caption text-outline truncate">(faculty02@example.edu) • Dept of Physics</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-orange-500 text-white font-bold">81 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-meta-badge text-meta-badge uppercase tracking-wider font-semibold">MONITORING</span>
+</div>
+</div>
+<div class="text-body-regular font-body-regular text-on-surface text-sm">
+<span class="font-body-semibold text-orange-700">Primary Anomaly:</span> New location (Frankfurt, DE) + unmanaged device registration
+                </div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">desktop_mac</span> Device-44 (macOS)
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">router</span> 203.0.113.18 (External ISP)
+                    </span>
+<span class="text-on-surface-variant font-medium">3 failed logins • Geo-velocity alert</span>
+</div>
+<span class="font-caption text-caption text-outline">15 min ago</span>
+</div>
+</div>
+<!-- Row 3: student23 -->
+<div class="user-table-row p-space-md hover:bg-surface-container-low cursor-pointer transition-colors space-y-space-xs bg-surface-container-lowest" id="row-student23" onclick="selectUser('student23')">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-orange-100 text-orange-800 font-semibold shrink-0">HIGH</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold truncate">student23</span>
+<span class="text-caption font-caption text-outline truncate">(student23@example.edu) • Biology</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-orange-500 text-white font-bold">78 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-meta-badge text-meta-badge uppercase tracking-wider font-semibold">MFA CHALLENGE</span>
+</div>
+</div>
+<div class="text-body-regular font-body-regular text-on-surface text-sm">
+<span class="font-body-semibold text-orange-700">Primary Anomaly:</span> Unusual login time (03:14 UTC) + off-campus ASN
+                </div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">laptop_windows</span> Device-31 (Win 11)
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">vpn_lock</span> 198.51.100.14 (Tor Candidate)
+                    </span>
+<span class="text-on-surface-variant font-medium">2 failed logins • Step-up MFA enforced</span>
+</div>
+<span class="font-caption text-caption text-outline">22 min ago</span>
+</div>
+</div>
+<!-- Row 4: student07 -->
+<div class="user-table-row p-space-md hover:bg-surface-container-low cursor-pointer transition-colors space-y-space-xs bg-surface-container-lowest" id="row-student07" onclick="selectUser('student07')">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-amber-100 text-amber-800 font-semibold shrink-0">MEDIUM</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold truncate">student07</span>
+<span class="text-caption font-caption text-outline truncate">(student07@example.edu) • Arts</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-amber-500 text-white font-bold">64 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-meta-badge text-meta-badge uppercase tracking-wider font-semibold">MONITORING</span>
+</div>
+</div>
+<div class="text-body-regular font-body-regular text-on-surface text-sm">
+<span class="font-body-semibold text-amber-700">Primary Anomaly:</span> First-seen device registration without MDM certificate
+                </div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">smartphone</span> Device-67 (iOS 17.4)
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">wifi</span> 10.0.0.81 (Campus Wi-Fi)
+                    </span>
+<span class="text-on-surface-variant font-medium">Valid password • MDM bypass attempt</span>
+</div>
+<span class="font-caption text-caption text-outline">31 min ago</span>
+</div>
+</div>
+<!-- Row 5: admin04 -->
+<div class="user-table-row p-space-md hover:bg-surface-container-low cursor-pointer transition-colors space-y-space-xs bg-surface-container-lowest" id="row-admin04" onclick="selectUser('admin04')">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-amber-100 text-amber-800 font-semibold shrink-0">MEDIUM</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold truncate">admin04</span>
+<span class="text-caption font-caption text-outline truncate">(admin04@example.edu) • IT Infrastructure</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-amber-500 text-white font-bold">72 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-meta-badge text-meta-badge uppercase tracking-wider font-semibold">MONITORING</span>
+</div>
+</div>
+<div class="text-body-regular font-body-regular text-on-surface text-sm">
+<span class="font-body-semibold text-amber-700">Primary Anomaly:</span> Privilege anomaly: accessed finance-ledger-k8s outside role baseline
+                </div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">terminal</span> Device-09 (Managed Mac)
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">shield</span> 10.0.10.15 (Mgmt VLAN)
+                    </span>
+<span class="text-on-surface-variant font-medium">SSO Token elevation request</span>
+</div>
+<span class="font-caption text-caption text-outline">45 min ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel A: Recent Identity Anomalies & Correlation Feed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">dynamic_feed</span>
+<h3 class="font-card-title text-card-title text-on-surface">Recent Identity Anomalies &amp; Correlation Feed</h3>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">Live Sync</span>
+</div>
+<div class="space-y-space-sm font-caption text-caption">
+<!-- Event 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-md hover:bg-surface-container transition-colors">
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline pt-0.5 shrink-0">14:25:22 UTC</span>
+<div class="min-w-0 flex-1">
+<div class="font-body-semibold text-on-surface flex items-center gap-space-xs flex-wrap">
+<span>New device auth &amp; token extraction attempt</span>
+<span class="px-1.5 py-0.2 rounded font-tech-mono-sm text-[11px] bg-error-container text-error">Risk 94</span>
+<span class="px-1.5 py-0.2 rounded font-tech-mono-sm text-[11px] bg-primary text-on-primary">INC-1039</span>
+</div>
+<div class="text-outline text-xs mt-0.5">Target: <span class="font-tech-mono-sm text-on-surface">student01</span> • Linked incident payload quarantining container instance</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-md hover:bg-surface-container transition-colors">
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline pt-0.5 shrink-0">14:18:10 UTC</span>
+<div class="min-w-0 flex-1">
+<div class="font-body-semibold text-on-surface flex items-center gap-space-xs flex-wrap">
+<span>Failed login spike: 14 invalid passwords against LDAP</span>
+<span class="px-1.5 py-0.2 rounded font-tech-mono-sm text-[11px] bg-orange-100 text-orange-800">Risk 81</span>
+</div>
+<div class="text-outline text-xs mt-0.5">Target: <span class="font-tech-mono-sm text-on-surface">faculty02</span> • Ingress IP 203.0.113.18 flagged for rate-limit</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-md hover:bg-surface-container transition-colors">
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline pt-0.5 shrink-0">14:02:44 UTC</span>
+<div class="min-w-0 flex-1">
+<div class="font-body-semibold text-on-surface flex items-center gap-space-xs flex-wrap">
+<span>Step-up MFA challenge issued for off-hours SSH session</span>
+<span class="px-1.5 py-0.2 rounded font-tech-mono-sm text-[11px] bg-orange-100 text-orange-800">Risk 78</span>
+</div>
+<div class="text-outline text-xs mt-0.5">Target: <span class="font-tech-mono-sm text-on-surface">student23</span> • FIDO2 WebAuthn token requested</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-md hover:bg-surface-container transition-colors">
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline pt-0.5 shrink-0">13:45:19 UTC</span>
+<div class="min-w-0 flex-1">
+<div class="font-body-semibold text-on-surface flex items-center gap-space-xs flex-wrap">
+<span>Unauthorized Kubernetes namespace role assumption</span>
+<span class="px-1.5 py-0.2 rounded font-tech-mono-sm text-[11px] bg-amber-100 text-amber-800">Risk 72</span>
+</div>
+<div class="text-outline text-xs mt-0.5">Target: <span class="font-tech-mono-sm text-on-surface">admin04</span> • RBAC authorization denied on finance-ledger-k8s</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel B: Subsystem Telemetry Health -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-md text-caption font-caption">
+<div class="flex items-center gap-space-xs text-on-surface font-body-semibold">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">hub</span>
+<span>Subsystems Telemetry:</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md font-tech-mono-sm text-tech-mono-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Okta SSO: OPERATIONAL
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> LDAP Sync: 14ms
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> RADIUS/MFA: ACTIVE
+            </span>
+<span class="flex items-center gap-1 text-primary">
+              Risk Engine v4.19 Deterministic
+            </span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: ACTIVE USER INVESTIGATION DRAWER (approx 38% ~ 5 cols) -->
+<div class="lg:col-span-5 xl:col-span-5 space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low/60 space-y-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<h3 class="font-section-title text-section-title text-on-surface">student01</h3>
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge uppercase tracking-wider bg-error-container text-error font-semibold">CRITICAL</span>
+<span class="px-2 py-0.5 rounded font-tech-mono-sm text-tech-mono-sm bg-error text-on-error font-bold">94 / 100</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-meta-badge text-meta-badge uppercase tracking-wider flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">lock</span> CONTAINED
+                  </span>
+</div>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline mt-1 truncate">
+                  student01@example.edu • Student Account
+                </div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 text-outline hover:text-on-surface rounded transition-colors" title="Close panel">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-caption font-caption text-outline pt-1">
+<span>Account Created: <span class="font-tech-mono-sm text-on-surface">2026-08-14</span></span>
+<a class="inline-flex items-center gap-1 font-body-semibold text-primary hover:underline" href="#">
+<span>Open Incident INC-1039</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- Section 1: "Why This User Is High Risk" -->
+<div class="space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error">analytics</span>
+<h4 class="font-card-title text-card-title text-on-surface">Why This User Is High Risk</h4>
+</div>
+<div class="p-space-md bg-error-container/20 rounded-lg text-caption font-body-regular text-on-surface leading-relaxed">
+                CyberGuard correlated <strong class="font-body-semibold">5 elevated identity signals</strong>: 12 failed authentication attempts, an impossible travel geo-anomaly (Frankfurt → Dallas in 12m), registration from unmanaged Device-21, and an attempt to assume <code class="font-tech-mono-sm bg-surface-container-high px-1 py-0.5 rounded text-error">finance:ledger:write</code> privileges.
+              </div>
+<!-- Contribution Point Breakdown -->
+<div class="space-y-2 pt-space-xs font-caption">
+<!-- Auth Anomaly -->
+<div>
+<div class="flex justify-between text-caption mb-1">
+<span class="font-body-regular text-on-surface">Authentication Anomaly (Brute force burst)</span>
+<span class="font-tech-mono-sm text-error font-semibold">+35 pts</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<!-- Device Anomaly -->
+<div>
+<div class="flex justify-between text-caption mb-1">
+<span class="font-body-regular text-on-surface">Device &amp; Endpoint (Unregistered Linux endpoint)</span>
+<span class="font-tech-mono-sm text-orange-600 font-semibold">+25 pts</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Geo Velocity -->
+<div>
+<div class="flex justify-between text-caption mb-1">
+<span class="font-body-regular text-on-surface">Impossible Geo-Velocity (8,100 km in 12 min)</span>
+<span class="font-tech-mono-sm text-orange-600 font-semibold">+18 pts</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-orange-400 h-full rounded-full" style="width: 36%;"></div>
+</div>
+</div>
+<!-- Privilege Escalation -->
+<div>
+<div class="flex justify-between text-caption mb-1">
+<span class="font-body-regular text-on-surface">Privilege Escalation Attempt (Target k8s financial)</span>
+<span class="font-tech-mono-sm text-amber-600 font-semibold">+12 pts</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-amber-400 h-full rounded-full" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Historical Baseline -->
+<div>
+<div class="flex justify-between text-caption mb-1">
+<span class="font-body-regular text-on-surface">Historical Identity Reputation</span>
+<span class="font-tech-mono-sm text-outline font-semibold">+4 pts</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-slate-400 h-full rounded-full" style="width: 8%;"></div>
+</div>
+</div>
+<!-- Total -->
+<div class="flex items-center justify-between pt-1 font-body-semibold text-on-surface text-caption">
+<span>Total Deterministic Score</span>
+<span class="font-tech-mono-base text-error text-tech-mono-base font-bold">94 / 100</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Behaviour Deviation vs Baseline -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-card-title text-card-title text-on-surface">Behaviour Deviation vs Baseline</h4>
+<span class="font-tech-mono-sm text-tech-mono-sm px-2 py-0.5 rounded bg-error/10 text-error font-semibold">94.2% Skew</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Baseline -->
+<div class="p-space-sm bg-surface-container-low rounded-lg space-y-2">
+<div class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline font-semibold">Normal Baseline (30d)</div>
+<div class="text-caption space-y-1">
+<div><span class="text-outline">Login Hours:</span> <span class="font-tech-mono-sm text-on-surface block">08:00 - 18:00 UTC</span></div>
+<div><span class="text-outline">Known Devices:</span> <span class="font-tech-mono-sm text-on-surface block">Device-03 (Win 11)</span></div>
+<div><span class="text-outline">Subnets:</span> <span class="font-tech-mono-sm text-on-surface block">Campus Wi-Fi / Dorms</span></div>
+<div><span class="text-outline">Avg Session:</span> <span class="font-tech-mono-sm text-on-surface block">2.4 hours</span></div>
+</div>
+</div>
+<!-- Observed Session -->
+<div class="p-space-sm bg-error-container/15 rounded-lg space-y-2">
+<div class="font-meta-badge text-meta-badge uppercase tracking-wider text-error font-semibold">Observed Session</div>
+<div class="text-caption space-y-1">
+<div><span class="text-outline">Login Hours:</span> <span class="font-tech-mono-sm text-error font-semibold block">03:14 UTC (Off-hours)</span></div>
+<div><span class="text-outline">Active Device:</span> <span class="font-tech-mono-sm text-error font-semibold block">Device-21 (Ubuntu)</span></div>
+<div><span class="text-outline">Source IP:</span> <span class="font-tech-mono-sm text-error font-semibold block">192.168.1.42 (VPN)</span></div>
+<div><span class="text-outline">Velocity:</span> <span class="font-tech-mono-sm text-error font-semibold block">8,100 km / 12 min</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Authentication Activity Timeline -->
+<div class="space-y-space-sm">
+<h4 class="font-card-title text-card-title text-on-surface">Authentication Activity Timeline</h4>
+<div class="relative pl-4 space-y-space-sm before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/40">
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-error ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:24:12 UTC</div>
+<div class="font-body-regular text-on-surface font-medium">Brute-Force burst (12 failed attempts on internal portal)</div>
+</div>
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-amber-500 ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:24:28 UTC</div>
+<div class="font-body-regular text-on-surface font-medium">Successful password login from unmanaged Device-21</div>
+</div>
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-orange-500 ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:25:01 UTC</div>
+<div class="font-body-regular text-on-surface font-medium">Impossible travel alert flagged by Identity AI</div>
+</div>
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-error ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:25:15 UTC</div>
+<div class="font-body-regular text-on-surface font-medium">Privileged role impersonation attempt (<code class="font-tech-mono-sm text-xs bg-surface-container-high px-1 rounded">finance:ledger:write</code>)</div>
+</div>
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:25:18 UTC</div>
+<div class="font-body-regular text-on-surface font-medium">Autonomous response: Session revoked across 14 Redis nodes</div>
+</div>
+<div class="relative pl-2 text-caption">
+<span class="absolute -left-3.5 top-1.5 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-surface-container-lowest"></span>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline">14:25:22 UTC</div>
+<div class="font-body-semibold text-emerald-700">Containment verified: 0 leaked tokens, user quarantined</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Active & Historical Sessions -->
+<div class="space-y-space-sm">
+<h4 class="font-card-title text-card-title text-on-surface">Active &amp; Historical Sessions</h4>
+<div class="space-y-space-xs font-caption text-caption">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-sm font-semibold text-on-surface">SES-1042</span>
+<span class="font-tech-mono-sm text-outline">• Device-21 • 192.168.1.42</span>
+</div>
+<div class="text-xs text-outline">Started: 14:24 UTC • Risk 94</div>
+</div>
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge bg-error-container text-error font-semibold">REVOKED</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-tech-mono-sm font-semibold text-on-surface">SES-1038</span>
+<span class="font-tech-mono-sm text-outline">• Device-03 • 10.0.0.45</span>
+</div>
+<div class="text-xs text-outline">Started: Yesterday 09:12 UTC • Risk 12</div>
+</div>
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge bg-surface-container-high text-outline font-semibold">TERMINATED</span>
+</div>
+</div>
+</div>
+<!-- Section 5: Associated Devices & Networks -->
+<div class="space-y-space-sm">
+<h4 class="font-card-title text-card-title text-on-surface">Associated Devices &amp; Networks</h4>
+<div class="space-y-space-xs font-caption text-caption">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[20px] text-error shrink-0">report</span>
+<div class="truncate">
+<div class="font-tech-mono-sm font-semibold text-on-surface truncate">Device-21 (Ubuntu 22.04 LTS)</div>
+<div class="text-xs text-outline font-tech-mono-sm">IP: 192.168.1.42 • Untrusted Endpoint</div>
+</div>
+</div>
+<a class="font-caption text-primary hover:underline shrink-0 text-xs font-semibold" href="#">Inspect in Network →</a>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[20px] text-emerald-600 shrink-0">check_circle</span>
+<div class="truncate">
+<div class="font-tech-mono-sm font-semibold text-on-surface truncate">Device-03 (Win 11 Pro)</div>
+<div class="text-xs text-outline font-tech-mono-sm">IP: 10.0.0.45 • Campus Wi-Fi Known MDM</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded font-meta-badge text-meta-badge bg-emerald-100 text-emerald-800 font-semibold">VERIFIED</span>
+</div>
+</div>
+</div>
+<!-- Section 6: Contextual AI Analyst Briefing -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-xs border-l-[3px] border-primary space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">psychology</span>
+<span class="font-card-title text-card-title text-on-surface">AI Analyst Briefing</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-tech-mono-sm text-tech-mono-sm text-on-surface">
+                  91.0% Confidence
+                </span>
+</div>
+<p class="font-body-regular text-body-regular text-on-surface text-sm leading-relaxed">
+                "The account exhibits clear markers of credential stuffing followed by session hijacking. Autonomous token invalidation successfully prevented unauthorized write access to internal microservices. Recommend password reset and hardware FIDO2 re-enrollment before lifting quarantine."
+              </p>
+<div class="flex items-center justify-between text-caption font-tech-mono-sm text-outline pt-1">
+<span>Model: Qwen Security v4.19</span>
+<span>Evidence References: 5</span>
+</div>
+</div>
+<!-- Section 7: Identity Response Actions -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<button class="w-full px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-on-surface font-body-semibold text-caption rounded-lg transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>Restore &amp; MFA</span>
+</button>
+<button class="w-full px-space-md py-2 bg-error-container text-error hover:bg-red-200 font-body-semibold text-caption rounded-lg transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">lock_person</span>
+<span>Lock Permanently</span>
+</button>
+</div>
+<button class="w-full px-space-md py-2.5 bg-primary hover:bg-primary-container text-on-primary font-body-semibold text-caption rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>View Linked Incident (INC-1039)</span>
+</button>
+<button class="w-full py-1 text-outline hover:text-on-surface font-caption text-caption flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>Export Identity Audit Proof (JSON)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

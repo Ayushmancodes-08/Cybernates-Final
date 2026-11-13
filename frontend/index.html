@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/shield.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#E05A1B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CyberGuard" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/shield.svg" />
+    <title>CyberGuard — AI-Powered Adaptive Firewall & SOC Operations</title>
+    
+    <!-- Local System Fonts with Web Font fallback (100% Offline Compatible) -->
+    <style>
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: local('Consolas'), local('Courier New'), local('monospace');
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      code, pre, .font-mono {
+        font-family: 'JetBrains Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+      }
+    </style>
+
+    <!-- Tailwind CSS with High-End Off-White / Sand Luxury Security Intelligence design system (Local Offline Bundle) -->
+    <script src="/tailwindcss.js"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "sand-50": "#FCFCF9",
+              "sand-100": "#F7F6F0",
+              "sand-200": "#EFECE4",
+              "sand-300": "#E2DDD2",
+              "sand-400": "#C7BFAF",
+              "surface": "#F9F8F5",
+              "surface-bright": "#FFFFFF",
+              "surface-dim": "#ECE9E1",
+              "surface-container-lowest": "#FFFFFF",
+              "surface-container-low": "#F7F6F1",
+              "surface-container": "#F1EFE8",
+              "surface-container-high": "#EBE8DF",
+              "surface-container-highest": "#E4E0D5",
+              "surface-variant": "#ECE8DC",
+              "on-surface": "#131618",
+              "on-surface-variant": "#5B6168",
+              "outline": "#888F96",
+              "outline-variant": "#D6D4CB",
+              "background": "#F9F8F5",
+              "on-background": "#131618",
+              "primary": "#E05A1B",
+              "primary-container": "#F97316",
+              "on-primary": "#FFFFFF",
+              "on-primary-container": "#FFFFFF",
+              "brand-amber": "#F59E0B",
+              "brand-emerald": "#10B981",
+              "brand-coral": "#EF4444",
+              "brand-dark": "#14171A",
+              "brand-dark-surface": "#1B1F23",
+              "cyber-navy": "#171D22",
+              "cyber-active": "#262E35"
+            },
+            fontFamily: {
+              "tech-mono-sm": ["JetBrains Mono", "monospace"],
+              "card-title": ["Inter", "sans-serif"],
+              "tech-mono-base": ["JetBrains Mono", "monospace"],
+              "display-title": ["Inter", "sans-serif"],
+              "body-regular": ["Inter", "sans-serif"],
+              "section-title": ["Inter", "sans-serif"],
+              "meta-badge": ["Inter", "sans-serif"],
+              "caption": ["Inter", "sans-serif"],
+              "body-semibold": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F9F8F5;
+        color: #131618;
+      }
+      code, pre, .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      /* Custom smooth modern scrollbar */
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F1EFE8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D1CDC2;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #A8A296;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

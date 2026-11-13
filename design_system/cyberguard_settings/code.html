@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "primary-fixed": "#dbe1ff", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "surface": "#f8f9ff", "surface-bright": "#f8f9ff", "secondary-container": "#d7dff9", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "error-container": "#ffdad6", "primary-container": "#2563eb", "inverse-primary": "#b4c5ff", "surface-tint": "#0053db", "inverse-on-surface": "#eaf1ff", "tertiary": "#005d73", "on-secondary-container": "#5a6278", "secondary": "#555e74", "tertiary-container": "#007793", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#001f28", "on-primary-fixed-variant": "#003ea8", "on-primary-fixed": "#00174b", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004e61", "inverse-surface": "#213145", "tertiary-fixed-dim": "#6cd3f7", "outline-variant": "#c3c6d7", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#3e475b", "on-surface-variant": "#434655", "outline": "#737686", "on-secondary-fixed": "#121b2e", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-fixed": "#d9e2fc", "primary": "#004ac6", "on-tertiary-container": "#dcf4ff", "on-error-container": "#93000a", "on-primary-container": "#eeefff", "secondary-fixed-dim": "#bdc6e0", "on-background": "#0b1c30", "background": "#f8f9ff", "tertiary-fixed": "#b7eaff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-lg": "2rem", "margin-sm": "1rem", "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem" }, "fontFamily": { "tech-mono-sm": ["JetBrains Mono"], "card-title": ["Inter"], "section-title-mobile": ["Inter"], "tech-mono-base": ["JetBrains Mono"], "display-title": ["Inter"], "display-title-mobile": ["Inter"], "body-regular": ["Inter"], "section-title": ["Inter"], "meta-badge": ["Inter"], "caption": ["Inter"], "body-semibold": ["Inter"] }, "fontSize": { "tech-mono-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "card-title": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "section-title-mobile": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tech-mono-base": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "display-title": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-title-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-regular": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "section-title": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "meta-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-semibold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-regular text-body-regular text-on-surface antialiased"><aside class="fixed inset-y-0 left-0 z-50 w-64 bg-inverse-surface flex flex-col transition-transform duration-200 ease-in-out -translate-x-full lg:translate-x-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" id="app-sidebar"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-inverse-surface/80 shrink-0"><img alt="CyberGuard Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W0LlZVr67H8U73st9v8uu31MpGifyWtIqGXvkSnVeDV7k9QtYEEICK9jRhPEL4anr5LRlqjJGAsh2I5SVx2XJ11FxdmQBRKNJD3kQbTeJDV40ZS_lRVDlm8XEgvzwmugshSu7o9znWcPkeAY3zqIazxXBRpmKzOos2lfWqZrGIPgLE2REgPuXACB7d8zlJmoJ1HGUfjAM7aY5DrkjRyK4HUYAknTiIn3f9O7YN7iDenc3zst2iMi6bRHM"/><div class="flex flex-col min-w-0"><span class="font-card-title text-card-title text-inverse-on-surface tracking-tight truncate">CyberGuard</span><span class="font-meta-badge text-meta-badge text-outline-variant uppercase tracking-wider truncate">Adaptive Security Platform</span></div><button class="lg:hidden ml-auto p-space-xs text-outline-variant hover:text-inverse-on-surface hover:bg-surface-variant/10 rounded-lg" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-lg space-y-space-xl"><nav class="space-y-space-xl" data-active-classes="bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]"><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Overview</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="overview" href="#">Overview</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Security</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="live-threats" href="#">Live Threats</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="incidents" href="#">Incidents</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="adaptive-firewall" href="#">Adaptive Firewall</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Intelligence</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="network-intelligence" href="#">Network Intelligence</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="identity-security" href="#">Identity Security</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="phishing-analysis" href="#">Phishing Analysis</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="ai-analyst" href="#">AI Analyst</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="threat-intelligence" href="#">Threat Intelligence</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">Operations</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="response-center" href="#">Response Center</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="simulator" href="#">Simulator</a></div></div><div><div class="px-space-sm mb-space-xs font-meta-badge text-meta-badge uppercase tracking-wider text-outline-variant">System</div><div class="space-y-0.5"><a class="flex items-center px-space-md py-space-sm rounded-lg text-outline-variant hover:bg-surface-variant/10 hover:text-inverse-on-surface transition-colors font-body-regular text-body-regular truncate" data-path="system-health" href="#">System Health</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-colors truncate bg-[#263552] text-on-primary font-body-semibold border-l-[3px] border-primary-container pl-[13px]" data-path="settings" href="#">Settings</a></div></div></nav></div><div class="p-space-md bg-inverse-surface/90 shrink-0"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">ENGINE v4.19</span></div><span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">SOC-01</span></div></div></aside><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-40 hidden" id="sidebar-backdrop" onclick="document.getElementById('app-sidebar').classList.add('-translate-x-full')"></div><div class="lg:pl-64 flex flex-col min-h-screen"><header class="fixed top-0 right-0 left-0 lg:left-64 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-1"><button class="lg:hidden p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg" onclick="document.getElementById('app-sidebar').classList.remove('-translate-x-full')"><span class="material-symbols-outlined text-[20px]">menu</span></button><div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-caption text-caption"><a class="hover:text-on-surface text-outline-variant transition-colors" data-path="overview" href="#">CyberGuard</a><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-body-semibold text-caption font-semibold">SOC Operations</span></div><div class="relative flex-1 max-w-[560px] mx-space-sm"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 bg-surface-container-low text-on-surface placeholder:text-outline text-caption font-body-regular rounded-lg border-0 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search IP, user, device, domain or incident..." type="text"/><kbd class="hidden md:inline-flex absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 bg-surface-container-lowest rounded text-[10px] font-tech-mono-sm text-outline font-semibold shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-outline-variant/30 text-on-surface rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-meta-badge text-meta-badge uppercase tracking-wider font-semibold text-on-surface">NORMAL</span></div><button class="hidden md:inline-flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors border-0"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-caption text-caption font-semibold">All systems operational</span><span class="material-symbols-outlined text-[16px] text-outline">keyboard_arrow_down</span></button><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCT6jP7jRCOx_dsTZ09HouyLkgiW_bDnFeYdm_fUS0qAJyAOeZuYsTrpg-vIYIxAuHlgBDWtEJp7Bn4xtu7nzOfEf09Nwi-ZeWf3XWKdIYMYP9_I--a4ZaNdfXfy6A1Z9QS4XJ8epVRQYhXSiuMkTtQuLDGDuDJuno5_KtNnih4-UCYCMul_5ZwPvzZIU-glZVKQTjUKHih2Fd69scTkVHqtvUgWpE0ipQkOXyaf-gJSBOYKBD0EYUqQ"/><div class="hidden 2xl:flex flex-col text-left"><span class="font-body-semibold text-caption text-on-surface truncate leading-tight">Elena Vance</span><span class="font-meta-badge text-meta-badge text-outline truncate">Lead Security Analyst</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glows (bounded) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 right-12 w-96 h-96 rounded-full bg-surface-container-high/40 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-1/3 w-64 h-64 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="max-w-[1680px] w-full mx-auto px-margin-sm md:px-margin lg:px-margin-lg py-margin-sm md:py-margin space-y-gutter-lg relative">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-xs">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline px-2 py-0.5 rounded-full bg-surface-container-low">Engine Governance</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">CONF-REV-2026.08.18</span>
+</div>
+<h1 class="font-display-title text-display-title text-on-surface tracking-tight">Settings</h1>
+<p class="font-caption text-caption text-on-surface-variant max-w-3xl">
+            Configure detection thresholds, adaptive response policies, AI analyst advisory behaviors, and verifiable kernel enforcement pipelines.
+          </p>
+</div>
+<!-- Primary Action Group -->
+<div class="flex items-center gap-space-sm self-start md:self-auto shrink-0">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-low text-secondary hover:bg-surface-container hover:text-on-surface font-body-semibold text-caption transition-colors" id="discard-header-btn">
+            Discard Changes
+          </button>
+<button class="h-9 px-space-lg rounded-lg bg-primary text-on-primary hover:bg-primary-container font-body-semibold text-caption shadow-sm transition-all flex items-center gap-space-xs" id="save-header-btn">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+<!-- Architectural Banner: Sole Authoritative Decision Engine -->
+<section class="relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm overflow-hidden">
+<!-- Visual Accent Stripe -->
+<div class="absolute inset-y-0 left-0 w-1.5 bg-primary"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-card-title text-card-title text-on-surface">Decision Authority: Policy Engine v4.19</span>
+<span class="font-tech-mono-sm text-tech-mono-sm px-2 py-0.5 rounded-full bg-surface-container text-primary font-semibold">DETERMINISTIC_ACTIVE</span>
+</div>
+<p class="font-body-regular text-body-regular text-on-surface-variant max-w-4xl">
+                Autonomous security interventions are deterministically governed by calibrated risk thresholds and compiled Suricata signatures. AI models (Network AI, Phishing AI, Qwen AI Analyst) provide detection signals and contextual explanations; they do <strong class="font-body-semibold text-on-surface">not</strong> hold autonomous enforcement privileges.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 lg:border-l lg:border-outline-variant/30 lg:pl-space-lg">
+<div class="flex flex-col text-left lg:text-right">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline">Enforcement Protocol</span>
+<span class="font-tech-mono-base text-tech-mono-base text-on-surface font-semibold">Deterministic eBPF/XDP</span>
+</div>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+</div>
+</div>
+</section>
+<!-- Main Layout: Navigation Tabs (Left Sidebar) + Configuration Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Navigation Tabs / Left Bar -->
+<nav aria-label="Settings Categories" class="lg:col-span-3 space-y-1">
+<div class="p-space-xs rounded-xl bg-surface-container-lowest shadow-sm space-y-0.5">
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>General Configuration</span>
+</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Detection Sensitivity</span>
+</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">0.75</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-body-semibold text-caption shadow-xs" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">shield</span>
+<span>Adaptive Response Policies</span>
+</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span>AI Analyst &amp; Advisory (Qwen)</span>
+</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-surface-container-high text-tertiary">ADVISORY</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">security</span>
+<span>Firewall &amp; Enforcement</span>
+</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-emerald-600">eBPF</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span>Notifications &amp; Alerts</span>
+</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface font-body-regular text-caption transition-colors" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+<span>Configuration Audit Trail</span>
+</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">3 today</span>
+</a>
+</div>
+<!-- Operator Session Card -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low text-on-surface shadow-xs space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline">Authenticated Role</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-primary">SUPER_SEC_ENG</span>
+</div>
+<div class="font-body-semibold text-caption text-on-surface truncate">Elena Vance (secops_lead)</div>
+<div class="font-tech-mono-sm text-tech-mono-sm text-outline-variant flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px]">key</span>
+<span>YubiKey FIDO2 Verified</span>
+</div>
+</div>
+</nav>
+<!-- Configuration Body (Right Area) -->
+<div class="lg:col-span-9 space-y-gutter">
+<!-- 1. Adaptive Response Configuration Section -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container-low">
+<div>
+<h2 class="font-section-title text-section-title text-on-surface">Adaptive Response Configuration</h2>
+<p class="font-caption text-caption text-on-surface-variant">Calibrate autonomous actions triggered purely by verified policy engine thresholds.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-semibold text-caption text-on-surface">Autonomous Enforcement</span>
+<!-- Custom accessible switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggle-enforcement" onchange="markDirty()" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Ephemeral Lifespan Dropdown & Summary Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-space-xs">
+<label class="font-body-semibold text-caption text-on-surface block" for="ephemeral-ttl">
+                  Default Ephemeral Rule Lifespan (TTL)
+                </label>
+<div class="relative">
+<select class="w-full h-10 px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-regular text-caption shadow-xs focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer" id="ephemeral-ttl" onchange="markDirty()">
+<option value="15">15 minutes (Transient containment)</option>
+<option selected="" value="30">30 minutes (Standard SOC Default)</option>
+<option value="60">1 hour (Extended operational investigation)</option>
+<option value="120">2 hours (High-pressure sustained incident)</option>
+<option value="1440">24 hours (Full forensic epoch)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<p class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">Rules auto-evict via kernel eBPF timer without operator cleanup.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-space-xs">
+<label class="font-body-semibold text-caption text-on-surface block" for="audit-frequency">
+                  Audit Log Archival Destination
+                </label>
+<div class="relative">
+<select class="w-full h-10 px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-regular text-caption shadow-xs focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer" id="audit-frequency" onchange="markDirty()">
+<option selected="">Immutable Object Store (S3-Compliant + WORM)</option>
+<option>SOC Internal Elastic Cluster (365d retention)</option>
+<option>Dedicated Splunk Heavy Forwarder</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<p class="font-tech-mono-sm text-tech-mono-sm text-outline-variant">Cryptographically signed with ed25519 local key.</p>
+</div>
+</div>
+<!-- Risk Score Action Threshold Matrix -->
+<div class="space-y-space-sm">
+<span class="font-body-semibold text-caption text-on-surface">Calibrated Risk Score Threshold Matrix</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-sm">
+<!-- Low Risk Tier -->
+<div class="p-space-md rounded-lg bg-surface-container-low/70 flex flex-col justify-between space-y-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-secondary">Low Risk</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-secondary">0 – 20</span>
+</div>
+<div class="font-card-title text-card-title text-on-surface">Monitor &amp; Log</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Passive baseline logging. No packet alterations or rate limiting.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm text-outline">
+<span class="w-2 h-2 rounded-full bg-slate-400"></span> PASSIVE_OBSERVE
+                  </span>
+</div>
+<!-- Medium Risk Tier -->
+<div class="p-space-md rounded-lg bg-amber-500/10 flex flex-col justify-between space-y-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-amber-800">Medium Risk</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-amber-800 font-semibold">21 – 60</span>
+</div>
+<div class="font-card-title text-card-title text-on-surface">Rate-Limit Flow</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Token bucket rate limiting &amp; heightened telemetry header retention.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm text-amber-800">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> RATE_LIMIT_TELEMETRY
+                  </span>
+</div>
+<!-- High Risk Tier -->
+<div class="p-space-md rounded-lg bg-orange-500/10 flex flex-col justify-between space-y-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-orange-800">High Risk</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-orange-800 font-semibold">61 – 80</span>
+</div>
+<div class="font-card-title text-card-title text-on-surface">Subnet Restrict</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Force step-up MFA challenge and isolate lateral segment access.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm text-orange-800">
+<span class="w-2 h-2 rounded-full bg-orange-500"></span> STEP_UP_ISOLATE
+                  </span>
+</div>
+<!-- Critical Risk Tier -->
+<div class="p-space-md rounded-lg bg-red-500/10 flex flex-col justify-between space-y-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-error">Critical Risk</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-error font-semibold">81 – 100</span>
+</div>
+<div class="font-card-title text-card-title text-on-surface">eBPF Drop &amp; Revoke</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Immediate hardware NIC drop and Redis user session termination.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm text-error font-semibold">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span> IMMEDIATE_DROP
+                  </span>
+</div>
+</div>
+</div>
+<!-- Allowed Autonomous Actions Checkboxes -->
+<div class="space-y-space-sm pt-space-xs">
+<span class="font-body-semibold text-caption text-on-surface">Allowed Autonomous Interventions</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-body-semibold text-caption text-on-surface">Temporary IP Drop (eBPF XDP)</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-surface-container text-primary uppercase">Kernel</span>
+</div>
+<p class="font-caption text-caption text-outline">Bypasses Linux TCP/IP stack; directly silences adversarial IP at physical NIC driver layer.</p>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-body-semibold text-caption text-on-surface">DNS Sinkhole / URL Quarantine</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-surface-container text-primary uppercase">CoreDNS</span>
+</div>
+<p class="font-caption text-caption text-outline">Reroutes C2 beaconing queries to internal honey-sinkhole analyzer instantly.</p>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-body-semibold text-caption text-on-surface">Redis User Session Revocation</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-surface-container text-primary uppercase">IAM</span>
+</div>
+<p class="font-caption text-caption text-outline">Flushes active JWT tokens and SSO cookie grants on authenticated high-risk anomalies.</p>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-body-semibold text-caption text-on-surface">Token Bucket Ingress Rate Limiting</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-surface-container text-primary uppercase">Traffic</span>
+</div>
+<p class="font-caption text-caption text-outline">Caps suspected brute-force endpoints at 1 req/sec without causing packet disruption.</p>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer md:col-span-2">
+<input class="mt-1 h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-body-semibold text-caption text-on-surface">Host Micro-isolation</span>
+<span class="font-meta-badge text-meta-badge px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-800 uppercase font-semibold">Requires Operator Approval</span>
+</div>
+<p class="font-caption text-caption text-outline">Restricts endpoint to CyberGuard command telemetry only. Automatically disabled from fully autonomous execution to avoid workload disruption.</p>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- 2. Detection Sensitivity & Correlation + Kernel Verification Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter">
+<!-- Detection Sensitivity Card -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-card-title text-card-title text-on-surface">Detection Sensitivity &amp; Correlation</h3>
+<p class="font-caption text-caption text-outline">Algorithmic tuning for temporal heuristic correlation.</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-outline">radar</span>
+</div>
+<!-- Anomaly Detection Range Slider -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-caption text-on-surface">Anomaly Detection Threshold</span>
+<span class="font-tech-mono-base text-tech-mono-base text-primary font-semibold" id="slider-val">0.75 (High Sensitivity)</span>
+</div>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="sensitivity-slider" max="0.95" min="0.50" oninput="document.getElementById('slider-val').innerText = this.value + (this.value &gt;= 0.75 ? ' (High Sensitivity)' : ' (Balanced)'); markDirty();" step="0.05" type="range" value="0.75"/>
+<div class="flex justify-between font-tech-mono-sm text-tech-mono-sm text-outline-variant">
+<span>0.50 Conservative</span>
+<span>0.75 SOC Default</span>
+<span>0.95 Strict</span>
+</div>
+</div>
+<!-- Minimum Confidence & Correlation Window Selects -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="space-y-1">
+<label class="font-body-semibold text-caption text-on-surface block" for="min-confidence">
+                    Minimum Engine Confidence
+                  </label>
+<select class="w-full h-9 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-regular text-caption shadow-xs focus:outline-none focus:ring-1 focus:ring-primary" id="min-confidence" onchange="markDirty()">
+<option>80% Minimum</option>
+<option>85% Minimum</option>
+<option selected="">90% Minimum (Recommended)</option>
+<option>95% Minimum (Strict Zero-Noise)</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-body-semibold text-caption text-on-surface block" for="corr-window">
+                    Correlation Time Window
+                  </label>
+<select class="w-full h-9 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-regular text-caption shadow-xs focus:outline-none focus:ring-1 focus:ring-primary" id="corr-window" onchange="markDirty()">
+<option>1 minute (High velocity bursts)</option>
+<option selected="">5 minutes (Standard SOC window)</option>
+<option>15 minutes (Low and slow evasion)</option>
+<option>60 minutes (Persistent recon)</option>
+</select>
+</div>
+</div>
+<!-- Packet Logging Toggle -->
+<div class="pt-space-xs">
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" onchange="markDirty()" type="checkbox"/>
+<span class="font-caption text-caption text-on-surface">
+                    Retain raw eBPF packet headers (pcapng ring-buffer) for 14 days
+                  </span>
+</label>
+</div>
+</section>
+<!-- Firewall & Kernel Verification Settings Card -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-card-title text-card-title text-on-surface">Firewall &amp; Kernel Verification</h3>
+<p class="font-caption text-caption text-outline">Closed-loop packet injection testing &amp; hardware offload.</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-outline">memory</span>
+</div>
+<div class="space-y-space-sm">
+<!-- eBPF XDP Toggle -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="space-y-0.5">
+<span class="font-body-semibold text-caption text-on-surface block">eBPF XDP Native Acceleration</span>
+<span class="font-caption text-caption text-outline">Offloads ACL matching directly to physical NIC RX ring.</span>
+</div>
+<span class="font-meta-badge text-meta-badge px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-semibold uppercase">Active</span>
+</div>
+<!-- Closed-Loop Synthetic Verification -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="space-y-0.5">
+<span class="font-body-semibold text-caption text-on-surface block">Closed-Loop Synthetic Verification</span>
+<span class="font-caption text-caption text-outline">Injects 12 synthetic telemetry probes immediately after rule push.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" onchange="markDirty()" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Failed Verification Fallback Dropdown -->
+<div class="space-y-1">
+<label class="font-body-semibold text-caption text-on-surface block" for="failed-verification">
+                    Failed Verification Fallback Policy
+                  </label>
+<select class="w-full h-9 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-regular text-caption shadow-xs focus:outline-none focus:ring-1 focus:ring-primary" id="failed-verification" onchange="markDirty()">
+<option selected="">Alert Operator &amp; Automatically Revert Rule</option>
+<option>Maintain Rule &amp; Escalate Severity to SEV-1</option>
+<option>Fall back to Linux iptables/nftables slow-path</option>
+</select>
+</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-high/40 flex items-center justify-between">
+<span class="font-tech-mono-sm text-tech-mono-sm text-outline">eBPF Probe Latency: 4.2µs avg</span>
+<span class="font-tech-mono-sm text-tech-mono-sm text-emerald-700 font-semibold">100% PROBE VERIFIED</span>
+</div>
+</section>
+</div>
+<!-- 3. AI Analyst (Qwen2.5-3B-Instruct) Advisory Configuration -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">cognition</span>
+</div>
+<div>
+<h3 class="font-card-title text-card-title text-on-surface">AI Analyst: Qwen2.5-3B-Instruct Service</h3>
+<p class="font-caption text-caption text-outline">Advisory synthesis, telemetry summarization, and human-readable incident reporting.</p>
+</div>
+</div>
+<span class="font-tech-mono-sm text-tech-mono-sm px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-800 font-semibold self-start sm:self-auto flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> OPERATIONAL (vLLM Engine)
+              </span>
+</div>
+<!-- Model Parameters & SOC Grounding Directives -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline">Model Role &amp; Scope</span>
+<div class="font-body-semibold text-caption text-on-surface">Advisory &amp; Contextual Synthesis Only</div>
+<p class="font-caption text-caption text-outline-variant">Strictly read-only; lacks permissions to dispatch actions or mutate kernel state.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline">Evidence Grounding</span>
+<div class="font-body-semibold text-caption text-on-surface">Strict Grounding Enforced</div>
+<p class="font-caption text-caption text-outline-variant">Requires explicit event/telemetry citations in every generated response card.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<span class="font-meta-badge text-meta-badge uppercase tracking-wider text-outline">Chain-of-Thought SOC Guard</span>
+<div class="font-body-semibold text-caption text-on-surface text-secondary">Visibility Suppressed</div>
+<p class="font-caption text-caption text-outline-variant">Internal reasoning tokens stripped to maximize SOC scanning speed and eliminate noise.</p>
+</div>
+</div>
+<!-- AI Guardrail Configuration Row -->
+<div class="p-space-md rounded-lg bg-surface-container-low/60 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">rule</span>
+<div class="space-y-0.5">
+<span class="font-body-semibold text-caption text-on-surface">Enforce Zero-Hallucination Regex Guardrail</span>
+<p class="font-caption text-caption text-outline">Validates all IP, CIDR, and CVE strings in AI output against the active Suricata telemetry table before rendering.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" onchange="markDirty()" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</section>
+<!-- 4. Recent Configuration Change History (Audit Trail Table) -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-card-title text-card-title text-on-surface">Recent Configuration Change History</h3>
+<p class="font-caption text-caption text-outline">Cryptographically audited configuration changes committed to the SOC tamper-evident ledger.</p>
+</div>
+<button class="h-8 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-body-semibold text-caption transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Ledger</span>
+</button>
+</div>
+<!-- Audit Trail Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container-high text-outline font-tech-mono-sm text-tech-mono-sm">
+<th class="py-space-sm px-space-sm font-semibold">TIMESTAMP</th>
+<th class="py-space-sm px-space-sm font-semibold">SETTING MODIFIED</th>
+<th class="py-space-sm px-space-sm font-semibold">PREVIOUS VALUE</th>
+<th class="py-space-sm px-space-sm font-semibold">NEW VALUE</th>
+<th class="py-space-sm px-space-sm font-semibold">OPERATOR / ACTOR</th>
+<th class="py-space-sm px-space-sm font-semibold text-right">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-regular text-caption">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-on-surface-variant whitespace-nowrap">
+                      Today 11:20 UTC
+                    </td>
+<td class="py-space-sm px-space-sm font-body-semibold text-on-surface">
+                      Adaptive Rule TTL
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-outline">
+                      60 min
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-primary font-semibold">
+                      30 min
+                    </td>
+<td class="py-space-sm px-space-sm text-on-surface-variant">
+                      admin04 <span class="text-outline text-[12px]">(S. Chen)</span>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-800">
+<span class="material-symbols-outlined text-[12px]">verified</span> Applied &amp; Signed
+                      </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-on-surface-variant whitespace-nowrap">
+                      Yesterday 16:45 UTC
+                    </td>
+<td class="py-space-sm px-space-sm font-body-semibold text-on-surface">
+                      Detection Sensitivity
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-outline">
+                      Medium (0.65)
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-primary font-semibold">
+                      High (0.75)
+                    </td>
+<td class="py-space-sm px-space-sm text-on-surface-variant">
+                      secops_lead <span class="text-outline text-[12px]">(E. Vance)</span>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-800">
+<span class="material-symbols-outlined text-[12px]">verified</span> Applied &amp; Signed
+                      </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-on-surface-variant whitespace-nowrap">
+                      2026-08-14 09:12 UTC
+                    </td>
+<td class="py-space-sm px-space-sm font-body-semibold text-on-surface">
+                      eBPF XDP Acceleration
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-outline">
+                      Disabled
+                    </td>
+<td class="py-space-sm px-space-sm font-tech-mono-sm text-tech-mono-sm text-primary font-semibold">
+                      Enabled
+                    </td>
+<td class="py-space-sm px-space-sm text-on-surface-variant">
+                      sysadmin <span class="text-outline text-[12px]">(Kernel Daemons)</span>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-tech-mono-sm text-tech-mono-sm px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-800">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Verified Active
+                      </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- Subtle Floating Unsaved Changes Footer Bar -->
+<div class="fixed bottom-4 left-4 right-4 lg:left-72 lg:right-8 z-40 transform transition-all duration-300 translate-y-24 opacity-0 pointer-events-none" id="unsaved-banner">
+<div class="max-w-4xl mx-auto rounded-xl bg-inverse-surface text-inverse-on-surface p-space-md shadow-xl flex flex-col sm:flex-row items-center justify-between gap-space-md border-0">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+<div>
+<span class="font-body-semibold text-caption text-inverse-on-surface block">You have unsaved changes in Adaptive Response Policies.</span>
+<span class="font-caption text-caption text-outline-variant">Policy modifications will be cryptographically signed by Elena Vance.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-auto shrink-0">
+<button class="h-9 px-space-md rounded-lg text-outline-variant hover:text-inverse-on-surface hover:bg-white/10 font-body-semibold text-caption transition-colors" onclick="discardChanges()">
+          Discard
+        </button>
+<button class="h-9 px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-semibold text-caption shadow-sm flex items-center gap-space-xs transition-colors" onclick="saveChanges()">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>Save Changes (Requires Operator Auth)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let hasChanges = false;
+  const banner = document.getElementById('unsaved-banner');
+
+  function markDirty() {
+    if (!hasChanges) {
+      hasChanges = true;
+      banner.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }
+  }
+
+  function discardChanges() {
+    hasChanges = false;
+    banner.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    // Reset to defaults
+    document.getElementById('ephemeral-ttl').value = "30";
+    document.getElementById('min-confidence').selectedIndex = 2;
+    document.getElementById('sensitivity-slider').value = "0.75";
+    document.getElementById('slider-val').innerText = "0.75 (High Sensitivity)";
+  }
+
+  function saveChanges() {
+    hasChanges = false;
+    banner.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    alert("Cryptographic signature approved. New configuration committed to Policy Engine v4.19 ledger.");
+  }
+
+  document.getElementById('discard-header-btn').addEventListener('click', discardChanges);
+  document.getElementById('save-header-btn').addEventListener('click', saveChanges);
+</script></main></div></body></html>

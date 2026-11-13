@@ -1,0 +1,187 @@
+From: "OKCL Verification Directorate" <verification@okcl-support-portal.in>
+To: candidate.odisha@gov.in
+Subject: URGENT: OKCL e-Certificate & OS-CIT Examination Verification Mandatory (Ref: OKCL/2026/SEC-94812)
+Date: Sun, 08 Nov 2026 14:00:00 +0530
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKCL Official Notice: Mandatory e-Certificate Re-Verification</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 30px 16px;
+      color: #1e293b;
+    }
+    .email-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .email-header {
+      background: linear-gradient(135deg, #1e3a8a, #0369a1);
+      color: #ffffff;
+      padding: 24px 30px;
+      border-bottom: 4px solid #f97316;
+    }
+    .email-header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .email-header p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #bae6fd;
+      font-family: monospace;
+    }
+    .badge {
+      background: #f97316;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .email-body {
+      padding: 30px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .urgent-banner {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      color: #991b1b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+    .meta-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .meta-table td:first-child {
+      font-weight: 700;
+      color: #64748b;
+      width: 140px;
+    }
+    .qr-card {
+      text-align: center;
+      background: #f8fafc;
+      border: 2px dashed #0284c7;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .qr-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: #ffffff;
+      padding: 8px;
+    }
+    .qr-card .caption {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0369a1;
+      margin-top: 12px;
+    }
+    .qr-card .sub-caption {
+      font-size: 11px;
+      color: #64748b;
+      font-family: monospace;
+      margin-top: 4px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #f97316;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+    .footer {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 20px 30px;
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1>ODISHA KNOWLEDGE CORPORATION LIMITED</h1>
+          <p>Government of Odisha Joint Initiative | Examination & Certification Directorate</p>
+        </div>
+        <span class="badge">OFFICIAL NOTICE</span>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="urgent-banner">
+        WARNING: Mandatory Certificate Retention Action Required (Ref: OKCL/2026/SEC-94812)
+      </div>
+      
+      <table class="meta-table">
+        <tr><td>Notice ID:</td><td>OKCL/EXAM/2026/MANDATE-94812</td></tr>
+        <tr><td>Candidate:</td><td>Registered OS-CIT Scholar</td></tr>
+        <tr><td>Issuing Node:</td><td>Controller of Examinations, OKCL Bhubaneswar</td></tr>
+        <tr><td>Resolution Time:</td><td><strong style="color: #dc2626;">Within 24 Hours (Before 11:59 PM IST)</strong></td></tr>
+      </table>
+
+      <p>Dear Candidate,</p>
+      <p>As per the revised State Educational Security Notification (Ref: 2026/ED-441), all awarded credentials for <strong>OS-CIT (Odisha State Certificate in Information Technology)</strong> must undergo mandatory Aadhaar-linked digital signature validation.</p>
+      
+      <p>Failure to complete biometric re-verification will result in temporary suspension of certificate validity across State Public Service Commission (OPSC/OSSC) and university admission registries.</p>
+
+      <div class="qr-card">
+        <img src="data:image/png;base64,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" alt="OKCL Fast-Track Verification QR Code" />
+        <div class="caption">SCAN TO COMPLETE E-KYC WITH PHONE CAMERA / GOOGLE LENS</div>
+        <div class="sub-caption">Destination: okcl-verification-portal.digital-kyc-auth.in</div>
+        <br/>
+        <a href="https://okcl-verification-portal.digital-kyc-auth.in/verify?candidate_id=OKCL-2026-94812" target="_blank" class="cta-btn">Scan or Tap to Authenticate Now</a>
+      </div>
+
+      <p style="font-size: 12px; color: #64748b;">
+        <strong>Important Security Notice:</strong> Never share your 6-digit Aadhaar OTP. OKCL Helpdesk will never ask for your internet banking credentials or UPI PIN.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p style="margin: 0; font-weight: 600;">(c) 2026 Odisha Knowledge Corporation Limited (OKCL). All rights reserved.</p>
+      <p style="margin: 4px 0 0;">Plot No. 108/3607, Jayadev Vihar, Bhubaneswar, Odisha 751013 | verification@okcl-support-portal.in</p>
+    </div>
+  </div>
+</body>
+</html>
+
